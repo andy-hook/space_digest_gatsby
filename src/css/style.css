@@ -1,0 +1,63 @@
+/* purgecss start ignore */
+@tailwind base;
+
+@tailwind components;
+/* purgecss end ignore */
+
+body {
+    @apply text-black;
+}
+
+h1 {
+    @apply font-header text-4xl inline-block leading-none tracking-tighter mt-4 mb-5;
+}
+
+h2 {
+    @apply font-title font-bold text-3xl font-bold mb-2 leading-none tracking-normal;
+}
+
+h3 {
+    @apply text-xl leading-tight mb-4;
+}
+
+p {
+    @apply text-xl font-light;
+}
+
+li {
+    @apply text-base;
+}
+
+.a {
+    @apply text-2xl underline;
+}
+
+.span {
+    @apply text-base font-light text-black leading-snug inline-block my-2;
+}
+
+@screen sm {
+    h1 {
+        @apply text-7xl;
+    }
+}
+
+@screen sm {
+    h2 {
+        @apply text-5xl;
+    }
+}
+
+@screen sm {
+    h3 {
+        @apply text-3xl leading-none;
+    }
+}
+
+@screen sm {
+    p {
+        @apply text-2xl font-light;
+    }
+}
+
+@tailwind utilities;
