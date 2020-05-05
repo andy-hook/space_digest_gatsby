@@ -7,11 +7,9 @@ function AboutPage() {
   return (
     <Layout>
       <SEO
-        keywords={[`gatsby`, `tailwind`, `react`, `tailwindcss`]}
+        keywords={[`Nasa`, `Spacex`,`Space`, `star`,`gatsby`, `tailwind`, `react`, `tailwindcss`]}
         title="About"
       />
-
-
         <animated.div
             style={fade}
             className="container md:w-3/4 mx-auto pt-20 md:pt-30 md:mb-12 "

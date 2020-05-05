@@ -10,6 +10,8 @@ exports.components = {
   "component---src-pages-about-js": hot(preferDefault(require("/Users/ptodde/Desktop/space-digest-jam/src/pages/about.js"))),
   "component---src-pages-contact-js": hot(preferDefault(require("/Users/ptodde/Desktop/space-digest-jam/src/pages/contact.js"))),
   "component---src-pages-index-js": hot(preferDefault(require("/Users/ptodde/Desktop/space-digest-jam/src/pages/index.js"))),
-  "component---src-pages-nasa-js": hot(preferDefault(require("/Users/ptodde/Desktop/space-digest-jam/src/pages/nasa.js")))
+  "component---src-pages-nasa-js": hot(preferDefault(require("/Users/ptodde/Desktop/space-digest-jam/src/pages/nasa.js"))),
+  "component---src-pages-spacex-launch-js": hot(preferDefault(require("/Users/ptodde/Desktop/space-digest-jam/src/pages/spacex/launch.js"))),
+  "component---src-pages-spacex-spacex-js": hot(preferDefault(require("/Users/ptodde/Desktop/space-digest-jam/src/pages/spacex/spacex.js")))
 }
 

@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react";
 import { SpacexLaunchesContext } from "../context/SpacexLaunchesContext";
 import Loader from "./base/Loader";
 import Card from "./base/Card";
-import spacex from "../img/spacex.png";
+import spacex from "../images/spacex.png";
 import Pagination from "./base/Pagination";
 
 function SpacexPatches() {

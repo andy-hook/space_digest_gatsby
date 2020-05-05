@@ -25,7 +25,7 @@ function Navigation() {
                     </Link>
                     <Link
                         className="inline-block text-teal-300 text-xl md:text-2xl  leading-normal hover:text-black"
-                        to="spacex"
+                        to="/spacex"
                     >
                         SpaceX
                     </Link>

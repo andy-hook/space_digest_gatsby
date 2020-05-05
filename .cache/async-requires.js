@@ -7,6 +7,8 @@ exports.components = {
   "component---src-pages-about-js": () => import("./../src/pages/about.js" /* webpackChunkName: "component---src-pages-about-js" */),
   "component---src-pages-contact-js": () => import("./../src/pages/contact.js" /* webpackChunkName: "component---src-pages-contact-js" */),
   "component---src-pages-index-js": () => import("./../src/pages/index.js" /* webpackChunkName: "component---src-pages-index-js" */),
-  "component---src-pages-nasa-js": () => import("./../src/pages/nasa.js" /* webpackChunkName: "component---src-pages-nasa-js" */)
+  "component---src-pages-nasa-js": () => import("./../src/pages/nasa.js" /* webpackChunkName: "component---src-pages-nasa-js" */),
+  "component---src-pages-spacex-launch-js": () => import("./../src/pages/spacex/launch.js" /* webpackChunkName: "component---src-pages-spacex-launch-js" */),
+  "component---src-pages-spacex-spacex-js": () => import("./../src/pages/spacex/spacex.js" /* webpackChunkName: "component---src-pages-spacex-spacex-js" */)
 }
 
