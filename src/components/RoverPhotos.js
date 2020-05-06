@@ -6,7 +6,7 @@ const API_BASE_URL = 'https://api.nasa.gov/mars-photos/api/v1/';
 const API_KEY      = 'api_key=24TE7EgNfmXIvdb6vNNZGBWx8s54XbZzCCi2oAdN';
 const CAMERA       = "NAVCAM";
 const ROVERNAME    = "NAVCAM";
-const SOL          = "400"
+const SOL          =  Math.floor(Math.random() * sols_with_photos.length);
 
 class RoverPhotos extends Component {
     constructor(props) {
@@ -22,10 +22,7 @@ class RoverPhotos extends Component {
         await fetch(`${API_BASE_URL}manifests/${ROVERNAME}?${API_KEY}`)
             .then(res => res.json())
             .then(sols_with_photos => {
-                const random_index = Math.floor(
-                    Math.random() * sols_with_photos.length
-                );
-                return sols_with_photos[random_index].sol;
+                return sols_with_photos[SOL].sol;
             })
             .then(random_sol => {
                 fetch(`${API_BASE_URL}rovers/${ROVERNAME}/photos?sol=${SOL}&camera=${CAMERA}&${API_KEY}`)
