@@ -4,7 +4,7 @@ import Layout from "../../components/layout";
 import SEO from "../../components/seo";
 import { SpacexLaunchesContext } from "../../context/SpacexLaunchesContext";
 import Loader from "../../components/base/Loader";
-import VideoFeatured  from "../../components/base/VideoFeatured";
+import VideoFeatured from "../../components/base/VideoFeatured";
 import Moment from "react-moment";
 import spacex from "../../images/spacex.png";
 import { useSpring, animated } from "react-spring";
@@ -27,15 +27,24 @@ function Launch(props) {
     console.log("Launch fetched! --->>>", res);
 
     const pageData = res.response
-        .map(res => res)
-        .filter(res => res.name === props.match.params.id);
+        .map((res) => res)
+        .filter((res) => res.name === props.match.params.id);
 
     console.log({ pageData });
 
     return (
         <Layout>
             <SEO
-                keywords={[`Nasa`, `Spacex`,`Space`, `star`,`gatsby`, `tailwind`, `react`, `tailwindcss`]}
+                keywords={[
+                    `Nasa`,
+                    `Spacex`,
+                    `Space`,
+                    `star`,
+                    `gatsby`,
+                    `tailwind`,
+                    `react`,
+                    `tailwindcss`,
+                ]}
                 title="Spacex launches"
             />
             <animated.div
@@ -102,7 +111,9 @@ function Launch(props) {
                                     <li className="flex flex-col md:flex-row">
                                         <a
                                             className="a inline-block mr-16"
-                                            href={pageData[0].links.article_link}
+                                            href={
+                                                pageData[0].links.article_link
+                                            }
                                         >
                                             Article
                                         </a>
@@ -129,16 +140,18 @@ function Launch(props) {
                         </div>
                         <SRLWrapper>
                             <div className="container grid gap-6 grid-cols-1 md:grid-cols-3 mt-10 md:mt-10 cursor-pointer">
-                                {pageData[0].links.flickr_images.map((photo, i) => {
-                                    return (
-                                        <img
-                                            className="object-cover object-center h-74 w-full rounded-sm"
-                                            src={photo}
-                                            key={i}
-                                            alt="Mission Launch"
-                                        />
-                                    );
-                                })}
+                                {pageData[0].links.flickr_images.map(
+                                    (photo, i) => {
+                                        return (
+                                            <img
+                                                className="object-cover object-center h-74 w-full rounded-sm"
+                                                src={photo}
+                                                key={i}
+                                                alt="Mission Launch"
+                                            />
+                                        );
+                                    }
+                                )}
                             </div>
                         </SRLWrapper>
                     </>

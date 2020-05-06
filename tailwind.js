@@ -1,14 +1,9 @@
-// See https://tailwindcss.com/docs/configuration for details
 module.exports = {
-  prefix: "",
-  important: false,
-  separator: ":",
-  purge: [
-    './src/**/*.js',
-  ],
-   theme: {
+    prefix: "",
+    important: false,
+    separator: ":",
+    theme: {
         screens: {
-            xs: "313px",
             sm: "640px",
             md: "768px",
             lg: "1024px",
@@ -17,7 +12,7 @@ module.exports = {
         colors: {
             transparent: "transparent",
 
-            black: "#0d0d0d",
+            black: "#000",
             white: "#fff",
 
             gray: {
@@ -149,12 +144,8 @@ module.exports = {
             "32": "8rem",
             "40": "10rem",
             "48": "12rem",
-            "50": "13rem",
             "56": "14rem",
-            "60": "15rem",
-            "64": "16rem",
-            "68": "17rem",
-            "74": "22rem"
+            "64": "16rem"
         },
         backgroundColor: theme => theme("colors"),
         backgroundPosition: {
@@ -181,7 +172,6 @@ module.exports = {
             none: "0",
             sm: "0.125rem",
             default: "0.25rem",
-            md: "0.375rem",
             lg: "0.5rem",
             full: "9999px"
         },
@@ -193,8 +183,6 @@ module.exports = {
             "8": "8px"
         },
         boxShadow: {
-            xs: "0 0 0 1px rgba(0, 0, 0, 0.05)",
-            sm: "0 1px 2px 0 rgba(0, 0, 0, 0.05)",
             default:
                 "0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)",
             md:
@@ -208,9 +196,7 @@ module.exports = {
             outline: "0 0 0 3px rgba(66, 153, 225, 0.5)",
             none: "none"
         },
-        container: {
-            center: true
-        },
+        container: {},
         cursor: {
             auto: "auto",
             default: "default",
@@ -238,15 +224,13 @@ module.exports = {
             default: "1"
         },
         fontFamily: {
-            header: ["Montserrat", "Calibre", "Avenir"],
             sans: [
                 "Avenir",
-                "Helvetica Neue",
-                "Calibre",
-                "system-ui",
                 "-apple-system",
                 "BlinkMacSystemFont",
                 '"Segoe UI"',
+                "Roboto",
+                '"Helvetica Neue"',
                 "Arial",
                 '"Noto Sans"',
                 "sans-serif",
@@ -272,7 +256,6 @@ module.exports = {
             ]
         },
         fontSize: {
-            xxs: "0.50rem",
             xs: "0.75rem",
             sm: "0.875rem",
             base: "1rem",
@@ -282,9 +265,7 @@ module.exports = {
             "3xl": "1.875rem",
             "4xl": "2.25rem",
             "5xl": "3rem",
-            "6xl": "4rem",
-            "7xl": "4.5rem",
-            "8xl": "6rem"
+            "6xl": "4rem"
         },
         fontWeight: {
             hairline: "100",
@@ -305,9 +286,6 @@ module.exports = {
         }),
         inset: {
             "0": "0",
-            "-8": "-8rem",
-            "-5": "-5rem",
-            "-2": "-2rem",
             auto: "auto"
         },
         letterSpacing: {
@@ -324,15 +302,7 @@ module.exports = {
             snug: "1.375",
             normal: "1.5",
             relaxed: "1.625",
-            loose: "2",
-            "3": ".75rem",
-            "4": "1rem",
-            "5": "1.25rem",
-            "6": "1.5rem",
-            "7": "1.75rem",
-            "8": "2rem",
-            "9": "2.25rem",
-            "10": "2.5rem"
+            loose: "2"
         },
         listStyleType: {
             none: "none",
@@ -348,8 +318,7 @@ module.exports = {
             full: "100%",
             screen: "100vh"
         },
-        maxWidth: (theme, { breakpoints }) => ({
-            none: "none",
+        maxWidth: {
             xs: "20rem",
             sm: "24rem",
             md: "28rem",
@@ -360,9 +329,8 @@ module.exports = {
             "4xl": "56rem",
             "5xl": "64rem",
             "6xl": "72rem",
-            full: "100%",
-            ...breakpoints(theme("screens"))
-        }),
+            full: "100%"
+        },
         minHeight: {
             "0": "0",
             full: "100%",
@@ -412,11 +380,6 @@ module.exports = {
         stroke: {
             current: "currentColor"
         },
-        strokeWidth: {
-            "0": "0",
-            "1": "1",
-            "2": "2"
-        },
         textColor: theme => theme("colors"),
         width: theme => ({
             auto: "auto",
@@ -458,185 +421,9 @@ module.exports = {
             "30": "30",
             "40": "40",
             "50": "50"
-        },
-        gap: theme => theme("spacing"),
-        gridTemplateColumns: {
-            none: "none",
-            "1": "repeat(1, minmax(0, 1fr))",
-            "2": "repeat(2, minmax(0, 1fr))",
-            "3": "repeat(3, minmax(0, 1fr))",
-            "4": "repeat(4, minmax(0, 1fr))",
-            "5": "repeat(5, minmax(0, 1fr))",
-            "6": "repeat(6, minmax(0, 1fr))",
-            "7": "repeat(7, minmax(0, 1fr))",
-            "8": "repeat(8, minmax(0, 1fr))",
-            "9": "repeat(9, minmax(0, 1fr))",
-            "10": "repeat(10, minmax(0, 1fr))",
-            "11": "repeat(11, minmax(0, 1fr))",
-            "12": "repeat(12, minmax(0, 1fr))"
-        },
-        gridColumn: {
-            auto: "auto",
-            "span-1": "span 1 / span 1",
-            "span-2": "span 2 / span 2",
-            "span-3": "span 3 / span 3",
-            "span-4": "span 4 / span 4",
-            "span-5": "span 5 / span 5",
-            "span-6": "span 6 / span 6",
-            "span-7": "span 7 / span 7",
-            "span-8": "span 8 / span 8",
-            "span-9": "span 9 / span 9",
-            "span-10": "span 10 / span 10",
-            "span-11": "span 11 / span 11",
-            "span-12": "span 12 / span 12"
-        },
-        gridColumnStart: {
-            auto: "auto",
-            "1": "1",
-            "2": "2",
-            "3": "3",
-            "4": "4",
-            "5": "5",
-            "6": "6",
-            "7": "7",
-            "8": "8",
-            "9": "9",
-            "10": "10",
-            "11": "11",
-            "12": "12",
-            "13": "13"
-        },
-        gridColumnEnd: {
-            auto: "auto",
-            "1": "1",
-            "2": "2",
-            "3": "3",
-            "4": "4",
-            "5": "5",
-            "6": "6",
-            "7": "7",
-            "8": "8",
-            "9": "9",
-            "10": "10",
-            "11": "11",
-            "12": "12",
-            "13": "13"
-        },
-        gridTemplateRows: {
-            none: "none",
-            "1": "repeat(1, minmax(0, 1fr))",
-            "2": "repeat(2, minmax(0, 1fr))",
-            "3": "repeat(3, minmax(0, 1fr))",
-            "4": "repeat(4, minmax(0, 1fr))",
-            "5": "repeat(5, minmax(0, 1fr))",
-            "6": "repeat(6, minmax(0, 1fr))"
-        },
-        gridRow: {
-            auto: "auto",
-            "span-1": "span 1 / span 1",
-            "span-2": "span 2 / span 2",
-            "span-3": "span 3 / span 3",
-            "span-4": "span 4 / span 4",
-            "span-5": "span 5 / span 5",
-            "span-6": "span 6 / span 6"
-        },
-        gridRowStart: {
-            auto: "auto",
-            "1": "1",
-            "2": "2",
-            "3": "3",
-            "4": "4",
-            "5": "5",
-            "6": "6",
-            "7": "7"
-        },
-        gridRowEnd: {
-            auto: "auto",
-            "1": "1",
-            "2": "2",
-            "3": "3",
-            "4": "4",
-            "5": "5",
-            "6": "6",
-            "7": "7"
-        },
-        transformOrigin: {
-            center: "center",
-            top: "top",
-            "top-right": "top right",
-            right: "right",
-            "bottom-right": "bottom right",
-            bottom: "bottom",
-            "bottom-left": "bottom left",
-            left: "left",
-            "top-left": "top left"
-        },
-        scale: {
-            "0": "0",
-            "50": ".5",
-            "75": ".75",
-            "90": ".9",
-            "95": ".95",
-            "100": "1",
-            "105": "1.05",
-            "110": "1.1",
-            "125": "1.25",
-            "150": "1.5"
-        },
-        rotate: {
-            "-180": "-180deg",
-            "-90": "-90deg",
-            "-45": "-45deg",
-            "0": "0",
-            "45": "45deg",
-            "90": "90deg",
-            "180": "180deg"
-        },
-        translate: (theme, { negative }) => ({
-            ...theme("spacing"),
-            ...negative(theme("spacing")),
-            "-full": "-100%",
-            "-1/2": "-50%",
-            "1/2": "50%",
-            full: "100%"
-        }),
-        skew: {
-            "-12": "-12deg",
-            "-6": "-6deg",
-            "-3": "-3deg",
-            "0": "0",
-            "3": "3deg",
-            "6": "6deg",
-            "12": "12deg"
-        },
-        transitionProperty: {
-            none: "none",
-            all: "all",
-            default:
-                "background-color, border-color, color, fill, stroke, opacity, box-shadow, transform",
-            colors: "background-color, border-color, color, fill, stroke",
-            opacity: "opacity",
-            shadow: "box-shadow",
-            transform: "transform"
-        },
-        transitionTimingFunction: {
-            linear: "linear",
-            in: "cubic-bezier(0.4, 0, 1, 1)",
-            out: "cubic-bezier(0, 0, 0.2, 1)",
-            "in-out": "cubic-bezier(0.4, 0, 0.2, 1)"
-        },
-        transitionDuration: {
-            "75": "75ms",
-            "100": "100ms",
-            "150": "150ms",
-            "200": "200ms",
-            "300": "300ms",
-            "500": "500ms",
-            "700": "700ms",
-            "1000": "1000ms"
         }
     },
-  variants: {
+    variants: {
         accessibility: ["responsive", "focus"],
         alignContent: ["responsive"],
         alignItems: ["responsive"],
@@ -653,7 +440,6 @@ module.exports = {
         borderStyle: ["responsive"],
         borderWidth: ["responsive"],
         boxShadow: ["responsive", "hover", "focus"],
-        boxSizing: ["responsive"],
         cursor: ["responsive"],
         display: ["responsive"],
         fill: ["responsive"],
@@ -663,7 +449,6 @@ module.exports = {
         flexShrink: ["responsive"],
         flexWrap: ["responsive"],
         float: ["responsive"],
-        clear: ["responsive"],
         fontFamily: ["responsive"],
         fontSize: ["responsive"],
         fontSmoothing: ["responsive"],
@@ -693,7 +478,6 @@ module.exports = {
         position: ["responsive"],
         resize: ["responsive"],
         stroke: ["responsive"],
-        strokeWidth: ["responsive"],
         tableLayout: ["responsive"],
         textAlign: ["responsive"],
         textColor: ["responsive", "hover", "focus"],
@@ -705,27 +489,8 @@ module.exports = {
         whitespace: ["responsive"],
         width: ["responsive"],
         wordBreak: ["responsive"],
-        zIndex: ["responsive"],
-        gap: ["responsive"],
-        gridAutoFlow: ["responsive"],
-        gridTemplateColumns: ["responsive"],
-        gridColumn: ["responsive"],
-        gridColumnStart: ["responsive"],
-        gridColumnEnd: ["responsive"],
-        gridTemplateRows: ["responsive"],
-        gridRow: ["responsive"],
-        gridRowStart: ["responsive"],
-        gridRowEnd: ["responsive"],
-        transform: ["responsive"],
-        transformOrigin: ["responsive"],
-        scale: ["responsive", "hover", "focus"],
-        rotate: ["responsive", "hover", "focus"],
-        translate: ["responsive", "hover", "focus"],
-        skew: ["responsive", "hover", "focus"],
-        transitionProperty: ["responsive"],
-        transitionTimingFunction: ["responsive"],
-        transitionDuration: ["responsive"]
+        zIndex: ["responsive"]
     },
-  // https://github.com/tailwindcss/custom-forms
-  plugins: [require("@tailwindcss/custom-forms")],
+    corePlugins: {},
+    plugins: []
 };

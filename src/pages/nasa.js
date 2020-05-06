@@ -12,19 +12,29 @@ function Nasa() {
 
     return (
         <Layout>
-        <SEO
-            keywords={[`Nasa`, `Spacex`,`Space`, `star`,`gatsby`, `tailwind`, `react`, `tailwindcss`]}
-            title="Nasa"
-        />
+            <SEO
+                keywords={[
+                    `Nasa`,
+                    `Spacex`,
+                    `Space`,
+                    `star`,
+                    `gatsby`,
+                    `tailwind`,
+                    `react`,
+                    `tailwindcss`,
+                ]}
+                title="Nasa"
+            />
             <animated.div style={fade} className="container mx-auto pt-24">
                 <div className="mb-12">
                     <div className="md:w-9/12 mx-auto text-center">
                         <h1 className="mb-3">NASA</h1>
                         <h3 className="md:w-3/5 mx-auto md:leading-tight mb-1">
-                            The National Aeronautics and Space Administration (NASA)
-                            is an independent agency of the United States Federal
-                            Government responsible for the civilian space program,
-                            as well as aeronautics and aerospace research.
+                            The National Aeronautics and Space Administration
+                            (NASA) is an independent agency of the United States
+                            Federal Government responsible for the civilian
+                            space program, as well as aeronautics and aerospace
+                            research.
                         </h3>
                     </div>
 
@@ -44,18 +54,16 @@ function Nasa() {
                                 Curiosity Mars rover photos (Mast camera)
                             </h2>
                             <p className="md:w-4/5 mb-12">
-                                Spirit and Opportunity landed on Mars January 3 and
-                                January 24, 2004 PST (Jan. 4 and Jan. 25 UTC). Both
-                                rovers lived well beyond their planned 90-day
-                                missions. Spirit and Opportunity found evidence for
-                                past wet conditions that possibly could have
-                                supported microbial life.
+                                Spirit and Opportunity landed on Mars January 3
+                                and January 24, 2004 PST (Jan. 4 and Jan. 25
+                                UTC). Both rovers lived well beyond their
+                                planned 90-day missions. Spirit and Opportunity
+                                found evidence for past wet conditions that
+                                possibly could have supported microbial life.
                             </p>
                         </div>
 
-
                         <RoverPhotos />
-
                     </div>
                 </div>
             </animated.div>

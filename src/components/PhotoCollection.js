@@ -1,16 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
 import useFetch from "../hooks/useFetch";
 import Loader from "./base/Loader";
-import { SRLWrapper } from "simple-react-lightbox";
-import Pagination from "./base/Pagination";
+// import Pagination from "./base/Pagination";
 
 function PhotosPage() {
-    const res = useFetch("/api/photo-collection/photos", {});
-    // Pagination
-    const [currentPage, setCurrentPage] = useState(1);
-    const [postsPerPage] = useState(15);
+    const res = useFetch("https://images-api.nasa.gov/search?q=launch&media_type=image", {});
+    // // Pagination
+    // const [currentPage, setCurrentPage] = useState(1);
+    // const [postsPerPage] = useState(15);
 
-    console.log("Photos fetched! --->>>", res);
+    console.log("Photos fetched! --->>>", res.response);
 
     if (!res.response) {
         return (
@@ -20,35 +19,39 @@ function PhotosPage() {
         );
     }
 
-    // Pagination - Get current posts
-    const indexOfLastPost = currentPage * postsPerPage;
-    const indexOfFirstPost = indexOfLastPost - postsPerPage;
-    let responsePage = res.response.slice(indexOfFirstPost, indexOfLastPost);
-    // Pagination - Change page
-    const paginate = pageNumber => setCurrentPage(pageNumber);
+    // // Pagination - Get current posts
+    // const indexOfLastPost = currentPage * postsPerPage;
+    // const indexOfFirstPost = indexOfLastPost - postsPerPage;
+    // let responsePage = res.response.slice(indexOfFirstPost, indexOfLastPost);
+    // // Pagination - Change page
+    // const paginate = pageNumber => setCurrentPage(pageNumber);
+
+    const photos = res.response.collection;
+    console.log('Photos', photos);
 
     return (
-        <div className="text-center">
-            <Pagination
-                postsPerPage={postsPerPage}
-                totalPosts={res.response.length}
-                paginate={paginate}
-            />
+        // <div className="text-center">
+        //     <Pagination
+        //         postsPerPage={postsPerPage}
+        //         totalPosts={res.response.length}
+        //         paginate={paginate}
+        //     />
 
+            <div className="text-center">
                 <div className="grid gap-4 grid-cols-1 md:grid-cols-3 object-cover mt-10">
-                    {responsePage.map((photo, i) => {
+                    {photos.items.map((photo, i) => {
                         return (
                             <img
                                 className="object-cover object-center h-74 w-full rounded-md col-span-1"
-                                src={photo.href}
+                                src={photo.links[0].href}
                                 key={i}
-                                alt={photo.title}
+                                alt={photo.data[0].title}
                             />
                         );
                     })}
                 </div>
+            </div>
 
-        </div>
     );
 }
 export default PhotosPage;

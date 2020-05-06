@@ -9,15 +9,15 @@ body {
 }
 
 h1 {
-    @apply font-header text-4xl inline-block leading-none tracking-tighter mt-4 mb-5;
+    @apply font-header font-bold text-4xl inline-block leading-none tracking-tighter mt-4 mb-5;
 }
 
 h2 {
-    @apply font-title font-bold text-3xl font-bold mb-2 leading-none tracking-normal;
+    @apply font-header font-bold text-3xl font-bold mb-2 leading-none tracking-normal;
 }
 
 h3 {
-    @apply text-xl leading-tight mb-4;
+    @apply font-header text-xl leading-tight mb-4;
 }
 
 p {

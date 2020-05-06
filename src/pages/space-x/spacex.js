@@ -13,7 +13,16 @@ function Spacex() {
     return (
         <Layout>
             <SEO
-                keywords={[`Nasa`, `Spacex`,`Space`, `star`,`gatsby`, `tailwind`, `react`, `tailwindcss`]}
+                keywords={[
+                    `Nasa`,
+                    `Spacex`,
+                    `Space`,
+                    `star`,
+                    `gatsby`,
+                    `tailwind`,
+                    `react`,
+                    `tailwindcss`,
+                ]}
                 title="Nasa"
             />
             <animated.div style={fade} className="container mx-auto pt-24">
@@ -24,13 +33,15 @@ function Spacex() {
                             SpaceX designs, manufactures and launches advanced
                             rockets and spacecraft. The company was founded in
                             <animated.span>{props.number}</animated.span> to
-                            revolutionize space technology, with the ultimate goal
-                            of enabling people to live on other planets.
+                            revolutionize space technology, with the ultimate
+                            goal of enabling people to live on other planets.
                         </h3>
                         <p className="inline-block pt-4 mr-10">
                             HQ: Hawthorne - California
                         </p>
-                        <p className="inline-block py-1 ">Address: Rocket Road</p>
+                        <p className="inline-block py-1 ">
+                            Address: Rocket Road
+                        </p>
                     </div>
                 </div>
                 <img
@@ -39,7 +50,7 @@ function Spacex() {
                     alt="Mars Rover"
                 />
 
-                <SpacexPatches />
+                {/* <SpacexPatches /> */}
             </animated.div>
         </Layout>
     );
