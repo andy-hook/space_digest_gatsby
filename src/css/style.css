@@ -17,7 +17,7 @@ h2 {
 }
 
 h3 {
-    @apply font-header text-xl leading-tight mb-4;
+    @apply text-xl leading-tight mb-4;
 }
 
 p {

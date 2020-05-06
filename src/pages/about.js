@@ -1,9 +1,11 @@
 import React from "react";
-
 import Layout from "../components/layout";
 import SEO from "../components/seo";
+import { useSpring, animated } from "react-spring";
 
 function AboutPage() {
+    const fade = useSpring({ opacity: 1, from: { opacity: 0 } });
+
     return (
         <Layout>
             <SEO

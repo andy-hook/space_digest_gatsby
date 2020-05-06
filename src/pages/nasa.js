@@ -50,7 +50,7 @@ function Nasa() {
 
                     <div className="rounded-md mt-20">
                         <div className="mb-10 text-left">
-                            <h2 className="md:w-4/5 line-block flex-1 mb-8 bg-teal-300">
+                            <h2 className="md:w-4/5 line-block flex-1 mb-8">
                                 Curiosity Mars rover photos (Mast camera)
                             </h2>
                             <p className="md:w-4/5 mb-12">
