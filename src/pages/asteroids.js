@@ -45,7 +45,7 @@ function Page__asteroids() {
                     <img
                         className="w-full bg-gray-200 mt-10 sm:mt-12 mb-16 md:mb-32"
                         src={asteroid}
-                        alt="Mars Rover"
+                        alt="Asteroid"
                     />
 
                     <Asteroids />

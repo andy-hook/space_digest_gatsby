@@ -25,16 +25,11 @@ function Media() {
                 <h2 className="inline-block md:w-w-64 mb-2 md:mb-10">
                     Daily Astronomy Image
                 </h2>
-
-
-                    <a href={mediaData.url} data-attribute="SRL">
-                        <img
-                            className="w-full mx-auto md:mb-12 rounded-sm cursor-pointer rounded-sm"
-                            src={mediaData.url}
-                            alt={mediaData.title}
-                        />
-                    </a>
-
+                    <img
+                        className="w-full mx-auto md:mb-12 rounded-sm cursor-pointer rounded-sm"
+                        src={mediaData.url}
+                        alt={mediaData.title}
+                    />
 
                 <div className="container mx-auto mt-4 md:mt-12 md:mt-16 md:mb-16 md:mb-20">
                     <div className="md:flex pt-8 md:pt-10 pb-10 md:pb-16 px-4 md:px-12 text-left bg-gray-100 rounded-md">
