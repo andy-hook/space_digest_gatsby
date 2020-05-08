@@ -17,7 +17,9 @@ function RoverPhotos() {
     }
 
 	// const photos = res.response;
-	const photos = res.response.photos;
+	const photos = res.response.photos.filter(photo => {
+		return photo.rover.cameras[0].name === "NAVCAM;"
+	});
 	console.log(photos);
 
 	return(
