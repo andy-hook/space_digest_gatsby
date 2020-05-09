@@ -13,5 +13,7 @@
         "browser": true,
         "node": true
     },
-    "rules": {}
+    "rules": {
+        "quotes": [2, "single", { "avoidEscape": true }]
+    }
 }

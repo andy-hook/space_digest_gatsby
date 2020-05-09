@@ -1,14 +1,42 @@
-import React from "react";
+import React, { useState } from "react";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import RoverPhotos from "../components/RoverPhotos";
 // import MarsWeather from "../../components/MarsWeather";
 import nasa_logo from "../images/nasa_logo.svg";
 import { useSpring, animated } from "react-spring";
+import Select from "react-select";
+import makeAnimated from "react-select/animated";
 
 function Nasa() {
-    //Fade animation
-    const fade = useSpring({ opacity: 1, from: { opacity: 0 } });
+    const fade = useSpring({ opacity: 1, from: { opacity: 0 } }); //Fade animation
+    const [selectRover, setSelectRover] = useState({});
+    const [selectCamera, setSelectedCamera] = useState({});
+
+    function reactSelectCustomTheme(theme) {
+        return {
+            ...theme,
+            colors: {
+                ...theme.colors,
+                primary50: "#4AFFE8",
+                primary25: "#81e6d9",
+                primary: "#dbf4f1",
+            },
+        };
+    }
+
+    // Select option for react-select
+    const chooseRover = [
+        { value: "Opportunity", label: "Navigation Camera" },
+        { value: "Curiosity", label: "Front Hazard Avoidance Camera" },
+        { value: "Spirit", label: "Rear Hazard Avoidance Camera" },
+    ];
+
+    const chooseCamera = [
+        { value: "FHAZ", label: "Curiosity" },
+        { value: "RHAZ", label: "Spirit" },
+        { value: "NAVCAM", label: "Opportunity" },
+    ];
 
     return (
         <Layout>
@@ -62,8 +90,39 @@ function Nasa() {
                                 possibly could have supported microbial life.
                             </p>
                         </div>
+                        <div className="flex mb-4 justify-between">
+                            <div className="flex-1">
+                                <h4 className="mb-3">Rover Name</h4>
+                                <Select
+                                    options={chooseRover}
+                                    placeholder="Select Rover"
+                                    width="400px"
+                                    theme={reactSelectCustomTheme}
+                                    autoFocus
+                                    isSearchable
+                                    onChange={selectRover}
+                                />
+                            </div>
 
-                        <RoverPhotos />
+                            <div className="flex-1">
+                                <h4 className="mb-3">Camera</h4>
+                                <Select
+                                    options={chooseCamera}
+                                    placeholder="Select camera"
+                                    defaultValue="NAVCAM"
+                                    defaultInputValue="Navigation Camera"
+                                    theme={reactSelectCustomTheme}
+                                    autoFocus
+                                    isSearchable
+                                    onChange={selectCamera}
+                                />
+                            </div>
+                        </div>
+
+                        <RoverPhotos
+                            rover={selectRover}
+                            camera={selectCamera}
+                        />
                     </div>
                 </div>
             </animated.div>
