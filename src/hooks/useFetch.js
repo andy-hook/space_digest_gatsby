@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const useFetch = (url, options) => {
+const useFetch = (url, options, dep) => {
     const [response, setResponse] = useState(null);
     const [error, setError] = useState(null);
     const [isLoading, setIsLoading] = useState(false);
@@ -19,13 +19,12 @@ const useFetch = (url, options) => {
             }
         };
         fetchData();
-        // eslint-disable-next-line
     }, []);
 
     return {
         response,
         error,
-        isLoading
+        isLoading,
     };
 };
 

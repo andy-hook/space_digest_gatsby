@@ -3,15 +3,17 @@ import Layout from "../components/layout";
 import SEO from "../components/seo";
 import RoverPhotos from "../components/RoverPhotos";
 // import MarsWeather from "../../components/MarsWeather";
+import FiftyFifty from "../components/base/FiftyFifty";
 import nasa_logo from "../images/nasa_logo.svg";
 import { useSpring, animated } from "react-spring";
 import Select from "react-select";
 import makeAnimated from "react-select/animated";
+import curiosityRover from "../images/curiosityRover.jpg";
 
 function Nasa() {
     const fade = useSpring({ opacity: 1, from: { opacity: 0 } }); //Fade animation
-    const [selectRover, setSelectRover] = useState({});
-    const [selectCamera, setSelectedCamera] = useState({});
+    const [selectRover, setSelectRover] = useState("curiosity");
+    const [selectCamera, setSelectCamera] = useState("NAVCAM");
 
     function reactSelectCustomTheme(theme) {
         return {
@@ -27,15 +29,14 @@ function Nasa() {
 
     // Select option for react-select
     const chooseRover = [
-        { value: "Opportunity", label: "Navigation Camera" },
-        { value: "Curiosity", label: "Front Hazard Avoidance Camera" },
-        { value: "Spirit", label: "Rear Hazard Avoidance Camera" },
+        { value: "opportunity", label: "Opportunity" },
+        { value: "curiosity", label: "Curiosity" },
+        { value: "spirit", label: "Spirit" },
     ];
-
     const chooseCamera = [
-        { value: "FHAZ", label: "Curiosity" },
-        { value: "RHAZ", label: "Spirit" },
-        { value: "NAVCAM", label: "Opportunity" },
+        { value: "FHAZ", label: "Front Hazard Avoidance Camera" },
+        { value: "NAVCAM", label: "Navigation Camera" },
+        { value: "RHAZ", label: "Rear Hazard Avoidance Camera" },
     ];
 
     return (
@@ -77,52 +78,22 @@ function Nasa() {
                     {/* <MarsWeather /> */}
 
                     <div className="rounded-md mt-20">
-                        <div className="mb-10 text-left">
-                            <h2 className="md:w-4/5 line-block flex-1 mb-8">
-                                Curiosity Mars rover photos (Mast camera)
-                            </h2>
-                            <p className="md:w-4/5 mb-12">
-                                Spirit and Opportunity landed on Mars January 3
+                        <FiftyFifty
+                            image={curiosityRover}
+                            width="w-100"
+                            title="Mars Rovers"
+                            text="Spirit and Opportunity landed on Mars January 3
                                 and January 24, 2004 PST (Jan. 4 and Jan. 25
                                 UTC). Both rovers lived well beyond their
                                 planned 90-day missions. Spirit and Opportunity
                                 found evidence for past wet conditions that
-                                possibly could have supported microbial life.
-                            </p>
-                        </div>
-                        <div className="flex mb-4 justify-between">
-                            <div className="flex-1">
-                                <h4 className="mb-3">Rover Name</h4>
-                                <Select
-                                    options={chooseRover}
-                                    placeholder="Select Rover"
-                                    width="400px"
-                                    theme={reactSelectCustomTheme}
-                                    autoFocus
-                                    isSearchable
-                                    onChange={selectRover}
-                                />
-                            </div>
-
-                            <div className="flex-1">
-                                <h4 className="mb-3">Camera</h4>
-                                <Select
-                                    options={chooseCamera}
-                                    placeholder="Select camera"
-                                    defaultValue="NAVCAM"
-                                    defaultInputValue="Navigation Camera"
-                                    theme={reactSelectCustomTheme}
-                                    autoFocus
-                                    isSearchable
-                                    onChange={selectCamera}
-                                />
-                            </div>
-                        </div>
-
-                        <RoverPhotos
-                            rover={selectRover}
-                            camera={selectCamera}
+                                possibly could have supported microbial life."
                         />
+
+                        <h2 className="line-block flex-1 mb-6 md:text-center">
+                            Mars Rover Images
+                        </h2>
+                        <RoverPhotos />
                     </div>
                 </div>
             </animated.div>

@@ -3,27 +3,26 @@ import useFetch from "../hooks/useFetch";
 import Loader from "./base/Loader";
 import Moment from "react-moment";
 
-function RoverPhotos({ rover, selectCamera }) {
+function RoverPhotos({ selectRover, selectCamera }) {
+    console.log("Prop passed", selectRover);
+    console.log("Prop passed", selectCamera);
+
     const randomSol = Math.floor(Math.random() * 1001);
-    const roverName = "curiosity";
 
     const res = useFetch(
-        `https://api.nasa.gov/mars-photos/api/v1/rovers/${roverName}/photos?sol=${randomSol}&api_key=24TE7EgNfmXIvdb6vNNZGBWx8s54XbZzCCi2oAdN`,
-        {}
+        `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=${randomSol}&api_key=24TE7EgNfmXIvdb6vNNZGBWx8s54XbZzCCi2oAdN`,
+        {},
+        [selectRover]
     );
 
     console.log("Media fetched! --->>>", res.response);
 
     if (!res.response) {
-        return (
-            <div className="container mx-auto text-center">
-                <Loader className="inline-block" />
-            </div>
-        );
+        return <Loader className="block w-1/4 mx-auto my-20" />;
     }
 
-    const photos = res.response.photos.filter((camera) =>
-        camera.camera.name.includes("NAVCAM")
+    const photos = res.response.photos.filter((item) =>
+        item.camera.name.includes("NAVCAM")
     );
 
     // const photos = res.response.photos;
@@ -32,7 +31,7 @@ function RoverPhotos({ rover, selectCamera }) {
 
     return (
         <>
-            <div>
+            <div className="grid grid-cols-3 gap-4 bg-gray-100 px-6 py-6 rounded-md mb-6 mt-12">
                 <h4>Rover name: {photos[0].rover.name}</h4>
                 <h4>Mars Sol: {photos[0].sol}</h4>
                 <h4>
@@ -55,6 +54,7 @@ function RoverPhotos({ rover, selectCamera }) {
                 </h4>
                 <h4>Status: {photos[0].rover.status}</h4>
             </div>
+
             <div className="container mx-auto md:grid gap-6 md:grid-cols-3 rounded-md">
                 {photos.map((photo) => {
                     return (
