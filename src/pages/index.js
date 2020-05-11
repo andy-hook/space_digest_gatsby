@@ -1,7 +1,6 @@
 import React from "react";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
-
 import Hero from "../components/Hero";
 import Media from "../components/Media";
 import FiftyFifty from "../components/base/FiftyFifty";
@@ -16,10 +15,18 @@ function IndexPage() {
     return (
         <Layout>
             <SEO
-                keywords={[`gatsby`, `tailwind`, `react`, `tailwindcss`]}
-                title="Home"
+                keywords={[
+                    `Nasa`,
+                    `Spacex`,
+                    `Space`,
+                    `star`,
+                    `gatsby`,
+                    `tailwind`,
+                    `react`,
+                    `tailwindcss`,
+                ]}
+                title="home"
             />
-
             <animated.div className="container mx-auto pt-12">
                 <Hero />
 
