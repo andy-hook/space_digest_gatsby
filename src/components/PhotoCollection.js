@@ -1,57 +1,55 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import useFetch from "../hooks/useFetch";
 import Loader from "./base/Loader";
-// import Pagination from "./base/Pagination";
+import Pagination from "./base/Pagination";
+import chunkArray from "../utils/chunkArray";
+import Photos from "./Photos";
+
+const PHOTOS_PER_PAGE = 15;
+const START_ON_PAGE_NUMBER = 1;
 
 function PhotosPage() {
-    const res = useFetch("https://images-api.nasa.gov/search?q=launch&media_type=image", {});
-    // // Pagination
-    // const [currentPage, setCurrentPage] = useState(1);
-    // const [postsPerPage] = useState(15);
+    const res = useFetch(
+        "https://images-api.nasa.gov/search?q=launch&media_type=image",
+        {}
+    );
 
     console.log("Photos fetched! --->>>", res.response);
 
-    if (!res.response) {
-        return (
-            <div className="container mx-auto h-screen text-center">
-                <Loader className="inline-block" />
-            </div>
-        );
+    const [currentPage, setCurrentPage] = useState(START_ON_PAGE_NUMBER);
+    const [photosToDisplay, setPhotosToDisplay] = useState();
+
+    useEffect(() => {
+        if (res.response) {
+            setPhotosToDisplay(
+                chunkArray(res.response.collection.items, PHOTOS_PER_PAGE)
+            );
+        }
+    }, [res.response]);
+
+    function renderPhotoPage(pageIndex) {
+        return <Photos items={photosToDisplay[pageIndex]} key={pageIndex} />;
     }
 
-    // // Pagination - Get current posts
-    // const indexOfLastPost = currentPage * postsPerPage;
-    // const indexOfFirstPost = indexOfLastPost - postsPerPage;
-    // let responsePage = res.response.slice(indexOfFirstPost, indexOfLastPost);
-    // // Pagination - Change page
-    // const paginate = pageNumber => setCurrentPage(pageNumber);
-
-    const photos = res.response.collection;
-    console.log('Photos', photos);
+    const changePage = (pageNumber) => setCurrentPage(pageNumber);
 
     return (
-        // <div className="text-center">
-        //     <Pagination
-        //         postsPerPage={postsPerPage}
-        //         totalPosts={res.response.length}
-        //         paginate={paginate}
-        //     />
-
-            <div className="text-center">
-                <div className="grid gap-4 grid-cols-1 md:grid-cols-3 object-cover mt-10">
-                    {photos.items.map((photo, i) => {
-                        return (
-                            <img
-                                className="object-cover object-center h-74 w-full rounded-md col-span-1"
-                                src={photo.links[0].href}
-                                key={i}
-                                alt={photo.data[0].title}
-                            />
-                        );
-                    })}
+        <>
+            {photosToDisplay ? (
+                <div className="md:text-right">
+                    <Pagination
+                        numberOfPages={photosToDisplay.length}
+                        onPageChange={changePage}
+                        activePageNumber={currentPage}
+                    />
+                    {renderPhotoPage(currentPage - 1)}
                 </div>
-            </div>
-
+            ) : (
+                <div className="container mx-auto h-screen text-center">
+                    <Loader className="inline-block" />
+                </div>
+            )}
+        </>
     );
 }
 export default PhotosPage;

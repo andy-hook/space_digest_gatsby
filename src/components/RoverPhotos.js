@@ -31,28 +31,45 @@ function RoverPhotos({ selectRover, selectCamera }) {
 
     return (
         <>
-            <div className="grid grid-cols-3 gap-4 bg-gray-100 px-6 py-6 rounded-md mb-6 mt-12">
-                <h4>Rover name: {photos[0].rover.name}</h4>
-                <h4>Mars Sol: {photos[0].sol}</h4>
-                <h4>
-                    Earth Date:
-                    <Moment format="DD/MM/YYYY">{photos[0].earth_date}</Moment>
-                </h4>
+            <div class="grid grid-cols-3 gap-4 bg-gray-100 px-12 py-8 mb-10 rounded-md text-center">
+                <div>
+                    <p className="text-xs uppercase">Rover name: </p>
+                    <h4 className="text-xl">{photos[0].rover.name}</h4>
+                </div>
 
-                <h4>
-                    Launch Date:
-                    <Moment format="DD/MM/YY">
-                        {photos[0].rover.launch_date}
-                    </Moment>
-                </h4>
+                <div>
+                    <p className="text-xs uppercase">Mars Sol: </p>
+                    <h4 className="text-xl">{photos[0].sol}</h4>
+                </div>
+                <div>
+                    <p className="text-xs uppercase"> Earth Date: </p>
+                    <h4 className="text-xl">
+                        <Moment format="DD/MM/YYYY">
+                            {photos[0].earth_date}
+                        </Moment>
+                    </h4>
+                </div>
 
-                <h4>
-                    Landing Date:
-                    <Moment format="DD/MM/YY">
-                        {photos[0].rover.landing_date}
-                    </Moment>
-                </h4>
-                <h4>Status: {photos[0].rover.status}</h4>
+                <div>
+                    <p className="text-xs uppercase"> Launch Date: </p>
+                    <h4 className="text-xl">
+                        <Moment format="DD/MM/YY">
+                            {photos[0].rover.launch_date}
+                        </Moment>
+                    </h4>
+                </div>
+                <div>
+                    <p className="text-xs uppercase"> Landing Date: </p>
+                    <h4 className="text-xl">
+                        <Moment format="DD/MM/YY">
+                            {photos[0].rover.landing_date}
+                        </Moment>
+                    </h4>
+                </div>
+                <div>
+                    <p className="text-xs uppercase"> Status: </p>
+                    <h4 className="text-xl">{photos[0].rover.status}</h4>
+                </div>
             </div>
 
             <div className="container mx-auto md:grid gap-6 md:grid-cols-3 rounded-md">

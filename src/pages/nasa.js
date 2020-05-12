@@ -80,11 +80,12 @@ function Nasa() {
                         {/* <MarsWeather /> */}
 
                         <div className="rounded-md mt-20">
-                            <div className="mb-10 text-left">
-                                <h2 className="md:w-4/5 line-block flex-1 mb-8 bg-teal-300">
-                                    Curiosity Mars rover photos (Mast camera)
+                            <div className="mb-10 text-left text-center">
+                                <h2 className="md:w-4/5 line-block flex-1 mb-8 mx-auto">
+                                    Mars rovers
                                 </h2>
-                                <p className="md:w-4/5 mb-12">
+
+                                <p className="md:w-4/5 mb-12 mx-auto">
                                     Spirit and Opportunity landed on Mars
                                     January 3 and January 24, 2004 PST (Jan. 4
                                     and Jan. 25 UTC). Both rovers lived well

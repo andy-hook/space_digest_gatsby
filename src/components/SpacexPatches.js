@@ -1,12 +1,12 @@
 import React, { useState, useContext } from "react";
-import { SpacexLaunchesContext } from "../context/SpacexLaunchesContext";
+// import { SpacexLaunchesContext } from "../context/SpacexLaunchesContext";
 import Loader from "./base/Loader";
 import Card from "./base/Card";
 import spacex from "../images/spacex.png";
 import Pagination from "./base/Pagination";
 
 function SpacexPatches() {
-    const res = useContext(SpacexLaunchesContext);
+    // const res = useContext(SpacexLaunchesContext);
     // Pagination
     const [currentPage, setCurrentPage] = useState(1);
     const [postsPerPage] = useState(16);
@@ -26,7 +26,7 @@ function SpacexPatches() {
     const indexOfFirstPost = indexOfLastPost - postsPerPage;
     let responsePage = res.response.slice(indexOfFirstPost, indexOfLastPost);
     // Pagination - Change page
-    const paginate = pageNumber => setCurrentPage(pageNumber);
+    const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
     return (
         <div>
