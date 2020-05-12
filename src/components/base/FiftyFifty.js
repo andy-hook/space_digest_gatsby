@@ -35,7 +35,7 @@ function FiftyFifty({
             <div className="flex-1 mb-12 md:my-0">
                 <div className="h-full md:flex flex-col justify-between">
                     <div>
-                        <h2 className="font-title font-bold md:inline-block bg-teal-300">
+                        <h2 className="font-title font-bold md:inline-block">
                             {title}
                         </h2>
                         <p className="block text-bold pt-6 md:pt-0  md:mt-4">
