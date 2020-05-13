@@ -34,12 +34,16 @@ function Patches({ items }) {
                         }}
                     >
                         <Card
-                            link={`/space-x/launch/${item.name}`}
-                            image={item.patch ? item.patch : spacex}
-                            title={item.name}
+                            link={`/space-x/launch/${item.mission_name}`}
+                            image={
+                                item.links.mission_patch
+                                    ? item.links.mission_patch
+                                    : spacex
+                            }
+                            title={item.mission_name}
                             tag1={item.flight_number}
-                            tag2={item.rocket}
-                            tag3={item.year}
+                            tag2={item.rocket.rocket_id}
+                            tag3={item.launch_year}
                         />
                     </animated.li>
                 );

@@ -52,7 +52,7 @@ function Spacex() {
                         alt="Mars Rover"
                     />
 
-                    {/* <SpacexPatches /> */}
+                    <SpacexPatches />
                 </div>
             </TransitionPageIn>
         </Layout>
