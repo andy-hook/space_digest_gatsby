@@ -5,8 +5,8 @@ import Pagination from "./base/Pagination";
 import Patches from "./Patches";
 import chunkArray from "../utils/chunkArray";
 
-const PATCHES_PER_PAGE = 16;
 const START_ON_PAGE_NUMBER = 1;
+const PATCHES_PER_PAGE = 16;
 
 function SpacexPatches() {
     const res = useFetch("https://api.spacexdata.com/v3/launches", {});
@@ -35,7 +35,7 @@ function SpacexPatches() {
                 <div>
                     <div className="md:flex justify-between items-end mb-8 md:mb-12">
                         <div className="inline-block">
-                            <h2 className="container w-full bg-teal-300 mb-0">
+                            <h2 className="container w-full mb-0">
                                 Mission Patches
                             </h2>
                         </div>
