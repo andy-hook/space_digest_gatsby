@@ -73,7 +73,7 @@ function IndexPage() {
 
                         <FiftyFifty
                             image="https://images2.imgbox.com/89/bc/JcbcvuBI_o.png"
-                            title="SpaceX"
+                            title="Space-X"
                             text="SpaceX designs, manufactures and launches advanced rockets and spacecraft. The company was founded in 2002 to revolutionize space technology, with the ultimate goal of enabling people to liv on other planets.."
                             btn_text="More about SpaceX"
                             link="/space-x"
