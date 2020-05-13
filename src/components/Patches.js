@@ -34,7 +34,7 @@ function Patches({ items }) {
                         }}
                     >
                         <Card
-                            link={`/space-x/launch/${item.mission_name}`}
+                            // link={`/space-x/launch/${item.mission_name}`}
                             image={
                                 item.links.mission_patch
                                     ? item.links.mission_patch
