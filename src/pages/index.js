@@ -61,7 +61,7 @@ function IndexPage() {
                                 <h2>Daily media</h2>
                                 <p className="w-8/12 mx-auto">
                                     Discovery the beauties of the universe in
-                                    our daily astronomy Image or Video{" "}
+                                    our daily astronomy Image or Video and{" "}
                                     <span className="underline">here</span>
                                 </p>
                             </Link>
