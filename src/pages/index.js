@@ -59,7 +59,7 @@ function IndexPage() {
                         <div className="bg-primary rounded-md py-4 md:py-20 md:px-40 text-center mb-5 md:mb-0">
                             <Link to="daily">
                                 <h2>Daily media</h2>
-                                <p className="w-8/12 mx-auto">
+                                <p className="w-6/12 mx-auto">
                                     Discovery the beauties of the universe in
                                     our daily astronomy Image or Video and{" "}
                                     <span className="underline">here</span>
