@@ -49,7 +49,7 @@ function IndexPage() {
                             title="Photo collection"
                             text="NASA.gov brings you the latest images, videos and news from America's space agency. Get the latest updates on NASA missions, and learn about the quest to reveal the unknown and benefit all humankind."
                             btn_text="Photos"
-                            link="/photo-collection"
+                            link="/photos"
                             reverse={true}
                         />
                     </TransitionInview>
@@ -76,7 +76,7 @@ function IndexPage() {
                             title="SpaceX"
                             text="SpaceX designs, manufactures and launches advanced rockets and spacecraft. The company was founded in 2002 to revolutionize space technology, with the ultimate goal of enabling people to liv on other planets.."
                             btn_text="More about SpaceX"
-                            link="/space-x"
+                            link="/spacex"
                             padding_img="py-10 px-10"
                             background={true}
                         />

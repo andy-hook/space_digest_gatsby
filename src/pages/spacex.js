@@ -1,10 +1,10 @@
 import React from "react";
-import Layout from "../../components/layout";
-import SEO from "../../components/seo";
-import SpacexPatches from "../../components/SpacexPatches";
-import spacex_logo from "../../images/spacex_logo.svg";
+import Layout from "../components/layout";
+import SEO from "../components/seo";
+import SpacexPatches from "../components/SpacexPatches";
+import spacex_logo from "../images/spacex_logo.svg";
 import { useSpring, animated } from "react-spring";
-import TransitionPageIn from "../../components/TransitionPageIn";
+import TransitionPageIn from "../components/TransitionPageIn";
 
 function Spacex() {
     //Fade animation
