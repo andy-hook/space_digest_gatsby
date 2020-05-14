@@ -1,12 +1,13 @@
 import React from "react";
+import { Link } from "gatsby";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import Hero from "../components/Hero";
-import Media from "../components/Media";
 import FiftyFifty from "../components/base/FiftyFifty";
 import nasa_logo from "../images/nasa_logo.svg";
 import img_tile_1 from "../images/img_tile_1.svg";
 import img_tile_2 from "../images/img_tile_2.svg";
+import Button from "../components/base/Button";
 import { useSpring, animated } from "react-spring";
 import TransitionPageIn from "../components/TransitionPageIn";
 import TransitionInview from "../components/TransitionInview";
@@ -55,7 +56,16 @@ function IndexPage() {
                     </TransitionInview>
 
                     <TransitionInview>
-                        <Media />
+                        <div className="bg-teal-300 rounded-md py-20 px-40 text-center">
+                            <Link to="daily">
+                                <h2>Daily media</h2>
+                                <p className="w-8/12 mx-auto">
+                                    Discovery the beauties of the universe in
+                                    our daily astronomy Image or Video{" "}
+                                    <span className="underline">here</span>
+                                </p>
+                            </Link>
+                        </div>
                     </TransitionInview>
 
                     <TransitionInview>

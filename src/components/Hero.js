@@ -4,8 +4,8 @@ import TransitionInview from "../components/TransitionInview";
 
 function Header() {
     return (
-        <header className="mx-auto text-center mb-8 md:mb-32 pt-6 md:pt-16">
-            <h1 className="tracking-tight">Space digest</h1>
+        <div className="mx-auto text-center mb-8 md:mb-32 pt-6 md:pt-16">
+            <h1 className="tracking-tight text-9xl">Space digest</h1>
             <h3 className="md:w-3/5 md:leading-tight mb-4 mx-auto">
                 "Space is for everybody. It's not just for a few people in
                 science or math, or for a select group of astronauts. That's our
@@ -22,7 +22,7 @@ function Header() {
                     url="https://www.youtube.com/watch?v=Ilifg26TZrI"
                 />
             </TransitionInview>
-        </header>
+        </div>
     );
 }
 

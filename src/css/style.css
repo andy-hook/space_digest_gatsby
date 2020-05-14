@@ -9,7 +9,7 @@ body {
 }
 
 h1 {
-    @apply font-header font-bold text-4xl inline-block leading-none tracking-tighter mt-4 mb-5;
+    @apply font-header font-bold text-9xl inline-block leading-none tracking-tighter mt-4 mb-8;
 }
 
 h2 {

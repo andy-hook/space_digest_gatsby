@@ -20,6 +20,7 @@ module.exports = {
         `gatsby-plugin-eslint`,
         `gatsby-plugin-react-helmet`,
         `gatsby-plugin-styled-components`,
+        `gatsby-plugin-postcss`,
         {
             resolve: `gatsby-plugin-manifest`,
             options: {

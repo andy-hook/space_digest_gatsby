@@ -4,7 +4,7 @@ import { Link } from "gatsby";
 
 function Navigation() {
     return (
-        <div className="w-full fixed bg-gray-100 md:bg-transparent z-10">
+        <header className="w-full fixed bg-gray-100 md:bg-transparent z-10">
             <div className="container mx-auto flex justify-between py-2 md:pt-6 ">
                 <Link className="text-teal-300" to="/">
                     <img
@@ -37,7 +37,7 @@ function Navigation() {
                     </Link>
                 </nav>
             </div>
-        </div>
+        </header>
     );
 }
 
