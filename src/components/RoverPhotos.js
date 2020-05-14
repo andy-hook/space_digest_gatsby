@@ -27,7 +27,7 @@ function RoverPhotos({ selectRover, selectCamera }) {
 
     return (
         <>
-            <div class="grid grid-cols-3 gap-4 bg-gray-100 px-12 py-8 mb-10 rounded-md text-center bg-teal-300">
+            <div class="grid grid-cols-3 gap-4 bg-gray-100 px-12 py-8 mb-10 rounded-md text-center bg-primary">
                 <div>
                     <p className="text-xs mb-1 uppercase">Rover name: </p>
                     <h3 className="text-2xl">{photos[0].rover.name}</h3>

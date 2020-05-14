@@ -15,8 +15,8 @@ const Pagination = ({ numberOfPages, onPageChange, activePageNumber }) => {
                         <button
                             className={`${
                                 activePageNumber === i + 1 &&
-                                `bg-teal-300 border-teal-300`
-                            } inline-block border border-black-500 h-8 w-8 hover:border-teal-300 focus:bg-teal-300 rounded-full focus:outline-none rounded-sm text-sm`}
+                                `bg-primary border-primary`
+                            } inline-block border border-black-500 h-8 w-8 hover:border-primary focus:bg-primary rounded-full focus:outline-none rounded-sm text-sm`}
                             onClick={() => onPageChange(pageNumber)}
                         >
                             {pageNumber}

@@ -1,11 +1,11 @@
 import React from "react";
-import { Link } from "gatsby"
+import { Link } from "gatsby";
 
 function Card({ image, link, key, title, tag1, tag2, tag3 }) {
     return (
         <div
             key={key}
-            className="max-w-sm bg-gray-100 rounded overflow-hidden border hover:border-teal-300 text-center"
+            className="max-w-sm bg-gray-100 rounded overflow-hidden border hover:border-primary text-center"
         >
             <Link to={link}>
                 <div>

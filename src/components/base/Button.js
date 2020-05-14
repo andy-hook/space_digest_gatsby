@@ -4,7 +4,7 @@ import { Link } from "gatsby";
 function Button({ btn_text, link, bgColor, textColor, hoverTextColor }) {
     return (
         <button
-            className={`w-full py-2 px-4 mt-8 rounded border border-4 border-black hover:bg-teal-300 hover:border-transparent hover:border-black  bg-${
+            className={`w-full py-2 px-4 mt-8 rounded border border-4 border-black hover:bg-primary hover:border-transparent hover:border-black  bg-${
                 bgColor ? bgColor : "transparent"
             }
             text-${textColor ? textColor : "black"}

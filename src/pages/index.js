@@ -56,7 +56,7 @@ function IndexPage() {
                     </TransitionInview>
 
                     <TransitionInview>
-                        <div className="bg-teal-300 rounded-md py-20 px-40 text-center">
+                        <div className="bg-primary rounded-md py-20 px-40 text-center">
                             <Link to="daily">
                                 <h2>Daily media</h2>
                                 <p className="w-8/12 mx-auto">
