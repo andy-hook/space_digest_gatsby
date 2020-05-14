@@ -59,7 +59,7 @@ function Nasa() {
                 <div className="container mx-auto pt-24">
                     <div className="mb-12">
                         <div className="md:w-9/12 mx-auto text-center">
-                            <h1 className="mb-3">NASA</h1>
+                            <h1 className="mb-5">NASA</h1>
                             <h3 className="md:w-3/5 mx-auto md:leading-tight mb-1">
                                 The National Aeronautics and Space
                                 Administration (NASA) is an independent agency
