@@ -28,7 +28,9 @@ function Page__photosPage() {
             <TransitionPageIn>
                 <div className="mx-auto pt-24 mb-12">
                     <div className="w-9/12 mx-auto text-center mb-12">
-                        <h1 className="mb-3">Photo collection</h1>
+                        <h2 className="mb-3 md:text-7xl text-5xl">
+                            Photo collection
+                        </h2>
                         <h3 className="md:w-3/5 mx-auto md:leading-tight mb-1">
                             NASA.gov brings you the latest images, videos and
                             news from America's space agency. Get the latest

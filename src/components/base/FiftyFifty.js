@@ -16,7 +16,7 @@ function FiftyFifty({
     return (
         <div
             className={`container mx-auto flex flex-col md:flex-row md:mt-24 md:mb-32
-                ${width ? width : "w-9/12"}
+                ${width ? width : "sm:w-8/12 md:w-7/12"}
                 ${padding ? padding : " "}
                 ${reverse && "md:flex-row-reverse"}`}
         >
@@ -35,7 +35,7 @@ function FiftyFifty({
             <div className="flex-1 mb-12 md:my-0">
                 <div className="h-full md:flex flex-col justify-between">
                     <div>
-                        <h2 className="font-title font-bold md:inline-block">
+                        <h2 className="font-title font-bold md:inline-block mt-10">
                             {title}
                         </h2>
                         <p className="block text-bold pt-6 md:pt-0  md:mt-4">

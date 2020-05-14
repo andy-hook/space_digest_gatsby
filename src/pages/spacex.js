@@ -31,8 +31,8 @@ function Spacex() {
                 <div className="container mx-auto pt-24">
                     <div className="mb-6 md:mb-12">
                         <div className="md:w-9/12 mx-auto text-center">
-                            <h1 className="mb-5">SpaceX</h1>
-                            <h3 className="md:w-3/5 mx-auto md:leading-tight mb-5">
+                            <h1 className="md:text-9xl text-5xl">SpaceX</h1>
+                            <h3 className="md:w-8/12 mx-auto md:leading-tight mb-5">
                                 SpaceX designs, manufactures and launches
                                 advanced rockets and spacecraft. The company was
                                 founded in 2002 to revolutionize space

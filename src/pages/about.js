@@ -38,9 +38,9 @@ function AboutPage() {
                     </p>
                     <p className="md:w-2/4 block mt-6">
                         The plan for the future includes further development for
-                        a better experience. Feel free to say hey at:
+                        a better experience.
                     </p>
-                    <p className="md:w-2/4 block mt-6">hi@spacedigest.live</p>
+
                     <p className="md:w-2/4 block mt-6">
                         Thanks for visiting
                         <span
@@ -52,6 +52,13 @@ function AboutPage() {
                         </span>{" "}
                     </p>
                     <p className="md:w-2/4 block mt-6">P.</p>
+                    <a
+                        className="inline-block text-xl md:text-2xl underline mt-10"
+                        rel="noopener noreferrer"
+                        href="mailto:webmaster@example.com"
+                    >
+                        hi@spacedigest.live
+                    </a>
                 </div>
             </TransitionPageIn>
         </Layout>

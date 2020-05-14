@@ -31,7 +31,7 @@ function IndexPage() {
                 title="home"
             />
             <TransitionPageIn>
-                <div className="container mx-auto pt-12">
+                <div className="px-5 md:px-0 mx-auto pt-12">
                     <Hero />
 
                     <TransitionInview>
@@ -56,7 +56,7 @@ function IndexPage() {
                     </TransitionInview>
 
                     <TransitionInview>
-                        <div className="bg-primary rounded-md py-20 px-40 text-center">
+                        <div className="bg-primary rounded-md py-4 md:py-20 md:px-40 text-center mb-5 md:mb-0">
                             <Link to="daily">
                                 <h2>Daily media</h2>
                                 <p className="w-8/12 mx-auto">
@@ -87,7 +87,7 @@ function IndexPage() {
                             text="SpaceX designs, manufactures and launches advanced rockets and spacecraft. The company was founded in 2002 to revolutionize space technology, with the ultimate goal of enabling people to liv on other planets.."
                             btn_text="More about SpaceX"
                             link="/spacex"
-                            padding_img="py-10 px-10"
+                            padding_img="py-8"
                             background={true}
                         />
                     </TransitionInview>
