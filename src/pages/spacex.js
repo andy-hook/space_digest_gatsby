@@ -5,6 +5,7 @@ import SpacexPatches from "../components/SpacexPatches";
 import spacex_logo from "../images/spacex_logo.svg";
 import { useSpring, animated } from "react-spring";
 import TransitionPageIn from "../components/TransitionPageIn";
+import TransitionInview from "../components/TransitionInview";
 
 function Spacex() {
     //Fade animation
@@ -51,8 +52,9 @@ function Spacex() {
                         src={spacex_logo}
                         alt="Mars Rover"
                     />
-
-                    <SpacexPatches />
+                    <TransitionInview>
+                        <SpacexPatches />
+                    </TransitionInview>
                 </div>
             </TransitionPageIn>
         </Layout>
