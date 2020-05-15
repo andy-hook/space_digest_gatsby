@@ -28,7 +28,7 @@ function Spacex() {
                 title="Nasa"
             />
             <TransitionPageIn>
-                <div className="container mx-auto pt-24">
+                <div className="container mx-auto pt-20 md:pt-24">
                     <div className="mb-6 md:mb-12">
                         <div className="md:w-9/12 mx-auto text-center">
                             <h1 className="md:text-9xl text-5xl">SpaceX</h1>

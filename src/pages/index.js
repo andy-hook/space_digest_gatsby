@@ -62,7 +62,9 @@ function IndexPage() {
                                 <p className="w-6/12 mx-auto">
                                     Discovery the beauties of the universe in
                                     our daily astronomy Image or Video and{" "}
-                                    <span className="underline">here</span>
+                                    <span className="text-tertiary underline">
+                                        here
+                                    </span>
                                 </p>
                             </Link>
                         </div>

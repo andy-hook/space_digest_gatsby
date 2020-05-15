@@ -27,19 +27,21 @@ function RoverPhotos({ selectRover, selectCamera }) {
 
     return (
         <>
-            <div class="grid grid-cols-3 gap-4 bg-primary px-12 py-8 mb-10 rounded-md text-center bg-primary">
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-4 bg-primary pl-12 md:px-12 py-6 md:py-8 mb-10 rounded-md md:text-center bg-primary">
                 <div>
                     <p className="text-xs mb-1 uppercase">Rover name: </p>
-                    <h3 className="text-2xl">{photos[0].rover.name}</h3>
+                    <h3 className="text-base md:text-xl md:text-2xl">
+                        {photos[0].rover.name}
+                    </h3>
                 </div>
 
                 <div>
                     <p className="text-xs mb-1 uppercase">Mars Sol: </p>
-                    <h4 className="text-2xl">{photos[0].sol}</h4>
+                    <h4 className="text-base md:text-2xl">{photos[0].sol}</h4>
                 </div>
                 <div>
                     <p className="text-xs mb-1 uppercase">Earth Date: </p>
-                    <h4 className="text-2xl">
+                    <h4 className="text-base md:text-2xl">
                         <Moment format="DD/MM/YYYY">
                             {photos[0].earth_date}
                         </Moment>
@@ -48,7 +50,7 @@ function RoverPhotos({ selectRover, selectCamera }) {
 
                 <div>
                     <p className="text-xs mb-1 uppercase">Launch Date: </p>
-                    <h4 className="text-2xl ">
+                    <h4 className="text-base md:text-2xl ">
                         <Moment format="DD/MM/YY">
                             {photos[0].rover.launch_date}
                         </Moment>
@@ -56,7 +58,7 @@ function RoverPhotos({ selectRover, selectCamera }) {
                 </div>
                 <div>
                     <p className="text-xs mb-1 uppercase"> Landing Date: </p>
-                    <h4 className="text-2xl">
+                    <h4 className="text-base md:text-2xl">
                         <Moment format="DD/MM/YY">
                             {photos[0].rover.landing_date}
                         </Moment>
@@ -64,11 +66,13 @@ function RoverPhotos({ selectRover, selectCamera }) {
                 </div>
                 <div>
                     <p className="text-xs mb-1 uppercase">Status: </p>
-                    <h4 className="text-2xl">{photos[0].rover.status}</h4>
+                    <h4 className="text-base md:text-2xl">
+                        {photos[0].rover.status}
+                    </h4>
                 </div>
             </div>
 
-            <div className="container mx-auto md:grid gap-6 md:grid-cols-3 rounded-md">
+            <div className="container mx-auto grid gap-6 grid-cols-2 md:grid-cols-3 rounded-md">
                 {photos.map((photo) => {
                     return (
                         <img
