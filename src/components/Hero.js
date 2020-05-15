@@ -5,7 +5,7 @@ import logo from "../images/logo.svg";
 
 function Header() {
     return (
-        <div className="mx-auto text-center md:mb-8 md:mb-32 pt-6 md:pt-16 ">
+        <div className="px-6 mx-auto text-center md:mb-8 md:mb-32 pt-6 md:pt-16 ">
             <h1 className="tracking-tight md:text-9xl text-5xl mb-4">
                 Space digest
             </h1>

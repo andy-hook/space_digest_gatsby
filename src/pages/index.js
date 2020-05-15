@@ -31,7 +31,7 @@ function IndexPage() {
                 title="home"
             />
             <TransitionPageIn>
-                <div className="px-5 md:px-0 mx-auto pt-12">
+                <div className="md:px-0 mx-auto pt-12">
                     <Hero />
 
                     <TransitionInview>
@@ -56,15 +56,13 @@ function IndexPage() {
                     </TransitionInview>
 
                     <TransitionInview>
-                        <div className="bg-primary rounded-md py-4 md:py-20 md:px-40 text-center mt-6 mb-16 md:mb-0">
-                            <Link to="daily">
+                        <div className="bg-primary rounded-md py-8 md:py-20 md:px-40 text-center mt-6 mb-16 md:mb-0">
+                            <Link to="daily cursor-pointe">
                                 <h2>Daily media</h2>
                                 <p className="w-6/12 mx-auto">
                                     Discovery the beauties of the universe in
                                     our daily astronomy Image or Video and{" "}
-                                    <span className="text-tertiary underline">
-                                        here
-                                    </span>
+                                    <span className="underline">here</span>
                                 </p>
                             </Link>
                         </div>

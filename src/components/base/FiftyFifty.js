@@ -15,7 +15,7 @@ function FiftyFifty({
 }) {
     return (
         <div
-            className={`px-5 md:container mx-auto flex flex-col md:flex-row mt-8 md:mt-12 md:mt-24 md:mb-32
+            className={`px-8 md:container mx-auto flex flex-col md:flex-row mt-8 md:mt-12 md:mt-24 md:mb-32
                 ${width ? width : "sm:w-8/12 md:w-7/12"}
                 ${padding ? padding : " "}
                 ${reverse && "md:flex-row-reverse"}`}
