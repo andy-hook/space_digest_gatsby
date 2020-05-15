@@ -17,7 +17,7 @@ function Media() {
 
     if (!res.response) {
         return (
-            <div className="container mx-auto text-center">
+            <div className="container mx-auto text-center pt-64">
                 <Loader className="inline-block" />
             </div>
         );

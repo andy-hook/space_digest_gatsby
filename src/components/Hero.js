@@ -5,7 +5,7 @@ import logo from "../images/logo.svg";
 
 function Header() {
     return (
-        <div className="px-6 mx-auto text-center md:mb-8 md:mb-32 pt-6 md:pt-16 ">
+        <div className="mx-auto text-center md:mb-8 md:mb-32 pt-6 md:pt-16 ">
             <h1 className="tracking-tight md:text-9xl text-5xl mb-4">
                 Space digest
             </h1>
@@ -15,7 +15,7 @@ function Header() {
                 new frontier out there, and it's everybody's business to know
                 about space."
             </h3>
-            <span className="span text-xs md:text-base text-gray-600 mt-0 mb-8 md:mb-20">
+            <span className="span text-xs md:text-base text-gray-600 mt-0 mb-8 md:mb-16">
                 CHRISTA MCAULIFFE, 1985
             </span>
             <TransitionInview>
@@ -23,7 +23,7 @@ function Header() {
                     width="100vw"
                     height="46vw"
                     url="https://www.youtube.com/watch?v=Ilifg26TZrI"
-                    className={"container mx-auto mb-20"}
+                    className={"mx-auto mb-20 bg-black"}
                 />
             </TransitionInview>
         </div>
