@@ -23,6 +23,7 @@ function Header() {
                     width="100vw"
                     height="46vw"
                     url="https://www.youtube.com/watch?v=Ilifg26TZrI"
+                    className={"container mx-auto mb-20"}
                 />
             </TransitionInview>
         </div>

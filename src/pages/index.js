@@ -56,7 +56,7 @@ function IndexPage() {
                     </TransitionInview>
 
                     <TransitionInview>
-                        <div className="bg-primary rounded-md py-4 md:py-20 md:px-40 text-center mb-5 md:mb-0">
+                        <div className="bg-primary rounded-md py-4 md:py-20 md:px-40 text-center mt-6 mb-16 md:mb-0">
                             <Link to="daily">
                                 <h2>Daily media</h2>
                                 <p className="w-6/12 mx-auto">
@@ -77,7 +77,7 @@ function IndexPage() {
                 Both rovers lived well beyond their planned 90-day missions. Spirit and Opportunity found evidence for past wet conditions that possibly could have supported microbial life."
                             btn_text="Rover pictures from Mars"
                             link="/nasa"
-                            padding_img="pl-8 pr-4"
+                            padding_img="md:pl-8 md:pr-4"
                             background={true}
                         />
 
@@ -87,7 +87,7 @@ function IndexPage() {
                             text="SpaceX designs, manufactures and launches advanced rockets and spacecraft. The company was founded in 2002 to revolutionize space technology, with the ultimate goal of enabling people to liv on other planets.."
                             btn_text="More about SpaceX"
                             link="/spacex"
-                            padding_img="py-8"
+                            padding_img="md:py-8"
                             background={true}
                         />
                     </TransitionInview>

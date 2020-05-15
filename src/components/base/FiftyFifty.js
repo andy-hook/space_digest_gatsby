@@ -15,30 +15,34 @@ function FiftyFifty({
 }) {
     return (
         <div
-            className={`container mx-auto flex flex-col md:flex-row md:mt-24 md:mb-32
+            className={`px-5 md:container mx-auto flex flex-col md:flex-row mt-8 md:mt-12 md:mt-24 md:mb-32
                 ${width ? width : "sm:w-8/12 md:w-7/12"}
                 ${padding ? padding : " "}
                 ${reverse && "md:flex-row-reverse"}`}
         >
             <div
                 className={`flex-1 md:mt-0 rounded-lg
-                    ${background && "bg-gray-100"}
+                    ${background && "md:bg-gray-100"}
                     ${reverse ? "md:mr-0 md:ml-20" : "md:mr-20"}`}
             >
                 <img
-                    className={`w-full h-full rounded-md
+                    className={`inline w-10 md:w-full md:h-full rounded-md
                     ${padding_img && padding_img} `}
                     src={image ? image : ""}
                     alt="spacex misson patch"
                 />
+                {/* Apperars on mobile */}
+                <h2 className="block md:hidden text-2xl font-bold inline md:inline-block mt-10 ml-5">
+                    {title}
+                </h2>
             </div>
             <div className="flex-1 mb-12 md:my-0">
                 <div className="h-full md:flex flex-col justify-between">
                     <div>
-                        <h2 className="font-title font-bold md:inline-block mt-10">
+                        <h2 className="hidden md:block font-title font-bold md:inline-block mt-10">
                             {title}
                         </h2>
-                        <p className="block text-bold pt-6 md:pt-0  md:mt-4">
+                        <p className="block text-bold pt-3 md:pt-6 md:pt-0  md:mt-4">
                             {text}
                         </p>
                     </div>

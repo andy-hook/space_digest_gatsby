@@ -44,22 +44,22 @@ function Media() {
                 <TransitionPageIn>
                     <TransitionInview>
                         {/* Media Image */}
-                        <div className="container md:w-9/12 mx-auto mb-12 md:mb-16 mt-10 md:pt-32">
+                        <div className="px-8 md:container md:w-9/12 mx-auto mb-12 md:mb-16 pt-32 md:pt10 md:pt-32">
                             <h2 className="inline-block md:w-w-64 mb-2 md:mb-10">
                                 Daily Astronomy Image
                             </h2>
                             <img
-                                className="w-full mx-auto md:mb-12 rounded-sm cursor-pointer rounded-sm"
+                                className="w-full mx-auto md:mb-12 rounded-sm cursor-pointer rounded-md"
                                 src={mediaData.url}
                                 alt={mediaData.title}
                             />
 
-                            <div className="container mx-auto mt-4 md:mt-12 md:mt-16 md:mb-16 md:mb-20">
-                                <div className="md:flex pt-8 md:pt-10 pb-10 md:pb-16 px-4 md:px-12 text-left bg-gray-100 rounded-md">
-                                    <h2 className="inline-block flex-1 pt-5">
+                            <div className="md:container mx-auto mt-4 md:mt-12 md:mt-16 md:mb-16 md:mb-20">
+                                <div className="md:flex pt-8 md:pt-10 pb-10 md:pb-16 px-4 md:px-32 text-left bg-secondary rounded-md">
+                                    <p className="inline-block flex-1 pt-5 font-bold">
                                         {mediaData.title}
-                                    </h2>
-                                    <p className="md:w-3/5 mx-auto md:pl-16 pt-5">
+                                    </p>
+                                    <p className="md:w-3/5 mx-auto md:pr-16 pt-5">
                                         {mediaData.explanation}
                                     </p>
                                 </div>

@@ -1,10 +1,10 @@
 import React from "react";
 import ReactPlayer from "react-player";
 
-function VideoFeatured({ url, width, height }) {
+function VideoFeatured({ url, width, height, className }) {
     return (
         <ReactPlayer
-            className="container"
+            className={className}
             url={url}
             playing
             controls={true}
