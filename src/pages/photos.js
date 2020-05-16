@@ -39,12 +39,12 @@ function Page__photosPage() {
                         </h3>
                     </div>
                     {/* <img
-                className="container mx-auto mb-10 md:mb-16"
-                src={moonlanding}
-                alt="Moon Landing"
-            /> */}
+                        className="container mx-auto mb-10 md:mb-16"
+                        src={moonlanding}
+                        alt="Moon Landing"
+                    /> */}
                     <div className="container">
-                        <div className="w-full mx-auto my-32">
+                        <div className="w-full mx-auto mb-32 mt-20">
                             <PhotoCollection />
                         </div>
                     </div>

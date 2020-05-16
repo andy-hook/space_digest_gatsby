@@ -36,7 +36,7 @@ function PhotosPage() {
     return (
         <>
             {photosToDisplay ? (
-                <div className="md:text-right">
+                <div className="md:text-center">
                     <Pagination
                         numberOfPages={photosToDisplay.length}
                         onPageChange={changePage}
