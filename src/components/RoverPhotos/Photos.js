@@ -21,7 +21,7 @@ function Photos({ items, src }) {
     );
 
     return (
-        <div className="grid gap-4 grid-cols-1 md:grid-cols-3 object-cover mt-10 cursor-pointer mb-32 ">
+        <div className="grid gap-4 grid-cols-1 md:grid-cols-3 object-cover mt-10 cursor-pointer">
             {springs.map((props, i) => {
                 const item = items[i];
                 return (

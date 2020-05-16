@@ -44,7 +44,7 @@ function Page__photosPage() {
                 alt="Moon Landing"
             /> */}
                     <div className="container">
-                        <div className="w-full mx-auto my-10">
+                        <div className="w-full mx-auto my-32">
                             <PhotoCollection />
                         </div>
                     </div>
