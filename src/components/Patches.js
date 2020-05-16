@@ -17,7 +17,7 @@ function Patches({ items }) {
     );
 
     return (
-        <ul className="container mx-auto grid gap-6 md:grid-cols-4 mb-12 cursor-pointer">
+        <ul className="mx-auto grid gap-6 md:grid-cols-4 mb-12 cursor-pointer">
             {springs.map(({ y, opacity }, i) => {
                 const item = items[i];
 
@@ -34,7 +34,7 @@ function Patches({ items }) {
                         }}
                     >
                         <Card
-                            // link={`/space-x/launch/${item.mission_name}`}
+                            link={`/space-x/launch/${item.mission_name}`}
                             image={
                                 item.links.mission_patch
                                     ? item.links.mission_patch

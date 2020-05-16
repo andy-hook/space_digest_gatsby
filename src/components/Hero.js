@@ -9,7 +9,7 @@ function Header() {
             <h1 className="tracking-tight md:text-9xl text-5xl mb-4">
                 Space digest
             </h1>
-            <h3 className="md:w-6/12 md:leading-tight mb-4 mx-auto">
+            <h3 className="w-9/12 md:w-6/12 md:leading-tight mb-4 mx-auto">
                 "Space is for everybody. It's not just for a few people in
                 science or math, or for a select group of astronauts. That's our
                 new frontier out there, and it's everybody's business to know

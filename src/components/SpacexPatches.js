@@ -32,13 +32,11 @@ function SpacexPatches() {
     return (
         <>
             {patchesToDisplay ? (
-                <div>
-                    <div className="md:flex justify-between items-end mb-8 md:mb-12">
-                        <div className="inline-block">
-                            <h2 className="container w-full mb-0">
-                                Mission Patches
-                            </h2>
-                        </div>
+                <div className="container">
+                    <div className="container md:flex justify-between items-end mb-8 md:mb-12">
+                        <h2 className=" inline-block w-full mb-0">
+                            Mission Patches
+                        </h2>
 
                         <Pagination
                             numberOfPages={patchesToDisplay.length}
@@ -50,7 +48,7 @@ function SpacexPatches() {
                     {renderPatchPage(currentPage - 1)}
                 </div>
             ) : (
-                <div className="mx-auto pt-12 pb-32">
+                <div className="container mx-auto pt-12 pb-32">
                     <Loader className="mx-auto" />
                 </div>
             )}

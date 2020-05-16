@@ -3,14 +3,14 @@ import Layout from "../components/layout";
 import SEO from "../components/seo";
 import SpacexPatches from "../components/SpacexPatches";
 import spacex_logo from "../images/spacex_logo.svg";
-import { useSpring, animated } from "react-spring";
+// import { useSpring, animated } from "react-spring";
 import TransitionPageIn from "../components/TransitionPageIn";
 import TransitionInview from "../components/TransitionInview";
 
 function Spacex() {
     //Fade animation
-    const fade = useSpring({ opacity: 1, from: { opacity: 0 } });
-    const props = useSpring({ number: 2002, from: { number: 0 } });
+    // const fade = useSpring({ opacity: 1, from: { opacity: 0 } });
+    // const props = useSpring({ number: 2002, from: { number: 0 } });
 
     return (
         <Layout>
@@ -28,9 +28,9 @@ function Spacex() {
                 title="Nasa"
             />
             <TransitionPageIn>
-                <div className="container mx-auto pt-20 md:pt-24">
+                <div className="pt-20 md:pt-24">
                     <div className="mb-6 md:mb-12">
-                        <div className="md:w-9/12 mx-auto text-center">
+                        <div className="w-9/12 mx-auto text-center">
                             <h1 className="md:text-9xl text-5xl">SpaceX</h1>
                             <h3 className="md:w-8/12 mx-auto md:leading-tight mb-5">
                                 SpaceX designs, manufactures and launches
@@ -47,11 +47,13 @@ function Spacex() {
                             </p>
                         </div>
                     </div>
-                    <img
-                        className="md:w-9/12 mx-auto bg-gray-200 mt-6 md:mt-12 md:mb-32 mb-16 py-16 pl-8 md:py-48 md:pr-20 md:pl-32 rounded-md"
-                        src={spacex_logo}
-                        alt="Mars Rover"
-                    />
+                    <TransitionInview>
+                        <img
+                            className="w-full mx-auto bg-primary mt-6 md:mt-12 md:mb-32 mb-16 py-16 pl-8 md:py-48 md:pr-20 md:pl-48 rounded-md"
+                            src={spacex_logo}
+                            alt="Mars Rover"
+                        />
+                    </TransitionInview>
                     <TransitionInview>
                         <SpacexPatches />
                     </TransitionInview>

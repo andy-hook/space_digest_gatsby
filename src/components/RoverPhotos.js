@@ -71,6 +71,9 @@ function RoverPhotos({ selectRover, selectCamera }) {
                     </h4>
                 </div>
             </div>
+            <h2 className="md:w-4/5 line-block flex-1 mb-8 mx-auto">
+                Mars rover images
+            </h2>
 
             <div className="container mx-auto grid gap-6 grid-cols-2 md:grid-cols-3 rounded-md">
                 {photos.map((photo) => {

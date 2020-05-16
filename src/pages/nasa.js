@@ -10,6 +10,7 @@ import { useSpring, animated } from "react-spring";
 import makeAnimated from "react-select/animated";
 import curiosityRover from "../images/curiosityRover.jpg";
 import TransitionPageIn from "../components/TransitionPageIn";
+import TransitionInview from "../components/TransitionInview";
 
 function Nasa() {
     const fade = useSpring({ opacity: 1, from: { opacity: 0 } }); //Fade animation
@@ -56,9 +57,9 @@ function Nasa() {
                 title="Nasa"
             />
             <TransitionPageIn>
-                <div className="container mx-auto pt-20 md:pt-24">
+                <div className="mx-auto pt-20 md:pt-24">
                     <div className="mb-12">
-                        <div className="md:w-9/12 mx-auto text-center">
+                        <div className="w-9/12 mx-auto text-center">
                             <h1 className="md:text-9xl text-5xl mb-5">NASA</h1>
                             <h3 className="md:w-9/12 mx-auto md:leading-tight mb-1">
                                 The National Aeronautics and Space
@@ -68,19 +69,20 @@ function Nasa() {
                                 well as aeronautics and aerospace research.
                             </h3>
                         </div>
-
-                        <img
-                            className="w-full md:w-9/12 mx-auto bg-gray-200 mt-10 sm:mt-12 mb-0 md:mb-16 md:mb-20 rounded-md py-10 px-10 md:py-20 md:px-20"
-                            src={nasa_logo}
-                            alt="Mars Rover"
-                        />
+                        <TransitionInview>
+                            <img
+                                className="w-full mx-auto bg-primary mt-10 sm:mt-12 mb-0 md:mb-16 md:mb-20 rounded-md py-10 px-10 md:px-64  md:py-20 md:px-20"
+                                src={nasa_logo}
+                                alt="Mars Rover"
+                            />
+                        </TransitionInview>
                     </div>
 
                     <div className="container md:w-9/12 mx-auto mb-10 mt-0 md:mt-20">
                         {/* <MarsWeather /> */}
 
-                        <div className="rounded-md mt-10 md:mt-20">
-                            <div className="mb-10 text-left text-center">
+                        <TransitionInview>
+                            <div className="mb-10 text-left">
                                 <h2 className="md:w-4/5 line-block flex-1 mb-8 mx-auto">
                                     Mars rovers
                                 </h2>
@@ -95,9 +97,8 @@ function Nasa() {
                                     supported microbial life.
                                 </p>
                             </div>
-
-                            <RoverPhotos />
-                        </div>
+                        </TransitionInview>
+                        <RoverPhotos />
                     </div>
                 </div>
             </TransitionPageIn>
