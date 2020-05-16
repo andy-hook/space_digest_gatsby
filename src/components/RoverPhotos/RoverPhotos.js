@@ -74,7 +74,7 @@ function RoverPhotos() {
         <>
             {photosToDisplay ? (
                 <div className="container">
-                    <div className="md:flex justify-between items-end mb-8 md:mb-32">
+                    <div className="md:flex justify-between items-end mb-8 md:mb-14">
                         <h2 className=" inline-block w-full">
                             Photo from Mars
                         </h2>
