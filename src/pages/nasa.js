@@ -70,11 +70,13 @@ function Nasa() {
                             </h3>
                         </div>
                         <TransitionInview>
-                            <img
-                                className="w-full mx-auto bg-primary mt-10 sm:mt-12 mb-0 md:mb-16 md:mb-20 rounded-md py-10 px-10 md:px-64  md:py-20 md:px-20"
-                                src={nasa_logo}
-                                alt="Mars Rover"
-                            />
+                            <div className="w-full bg-primary mt-10 sm:mt-12 mb-0 md:mb-16 md:mb-20 rounded-md py-10 px-16 md:py-20 md:px-20">
+                                <img
+                                    className="w-7/12 mx-auto md:pl-20"
+                                    src={nasa_logo}
+                                    alt="Mars Rover"
+                                />
+                            </div>
                         </TransitionInview>
                     </div>
 
@@ -82,7 +84,7 @@ function Nasa() {
                         {/* <MarsWeather /> */}
 
                         <TransitionInview>
-                            <div className="w-10/12 mx-auto mt-32 mb-20 text-left flex">
+                            <div className="container mx-auto text-left md:flex mt-32 mb-24 border-b-2 border-black ">
                                 <h2 className="md:w-4/12 line-block flex-1 mb-8 mx-auto">
                                     Mars rovers
                                 </h2>
@@ -98,7 +100,10 @@ function Nasa() {
                                 </p>
                             </div>
                         </TransitionInview>
-                        <RoverPhotos />
+
+                        <TransitionInview>
+                            <RoverPhotos />
+                        </TransitionInview>
                     </div>
                 </div>
             </TransitionPageIn>

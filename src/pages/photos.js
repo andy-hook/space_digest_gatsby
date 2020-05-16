@@ -38,7 +38,6 @@ function Page__photosPage() {
                             to reveal the unknown and benefit all humankind.
                         </h3>
                     </div>
-
                     {/* <img
                 className="container mx-auto mb-10 md:mb-16"
                 src={moonlanding}

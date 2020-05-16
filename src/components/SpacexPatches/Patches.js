@@ -1,6 +1,6 @@
 import React from "react";
-import Card from "./base/Card";
-import spacex from "../images/spacex.png";
+import Card from "../base/Card";
+import spacex from "../../images/spacex.png";
 import { animated, useSprings } from "react-spring";
 
 function Patches({ items }) {
@@ -17,7 +17,7 @@ function Patches({ items }) {
     );
 
     return (
-        <ul className="mx-auto grid gap-6 md:grid-cols-4 md:my-32 cursor-pointer">
+        <ul className="mx-auto grid gap-6 md:grid-cols-4 md:mb-32 cursor-pointer">
             {springs.map(({ y, opacity }, i) => {
                 const item = items[i];
 

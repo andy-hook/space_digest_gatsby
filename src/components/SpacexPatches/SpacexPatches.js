@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import useFetch from "../hooks/useFetch";
-import Loader from "./base/Loader";
-import Pagination from "./base/Pagination";
+import useFetch from "../../hooks/useFetch";
+import Loader from "../base/Loader";
+import Pagination from "../base/Pagination";
 import Patches from "./Patches";
-import chunkArray from "../utils/chunkArray";
+import chunkArray from "../../utils/chunkArray";
 
 const START_ON_PAGE_NUMBER = 1;
 const PATCHES_PER_PAGE = 16;
@@ -34,7 +34,7 @@ function SpacexPatches() {
             {patchesToDisplay ? (
                 <div className="container">
                     <div className="container md:flex justify-between items-end mb-8 md:mb-12">
-                        <h2 className=" inline-block w-full mb-0">
+                        <h2 className=" inline-block w-full">
                             Mission Patches
                         </h2>
 
