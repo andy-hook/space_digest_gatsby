@@ -48,11 +48,13 @@ function Spacex() {
                         </div>
                     </div>
                     <TransitionInview>
-                        <img
-                            className="w-full mx-auto bg-primary mt-6 md:mt-12 md:mb-32 mb-16 py-16 pl-8 md:py-48 md:pr-20 md:pl-48 rounded-md"
-                            src={spacex_logo}
-                            alt="Mars Rover"
-                        />
+                        <div className="w-full bg-primary mt-10 sm:mt-12 mb-0 md:mb-16 md:mb-20 rounded-md py-8 md:py-40 px-16 md:py-20 md:px-20">
+                            <img
+                                className="w-9/12 mx-auto pl-32"
+                                src={spacex_logo}
+                                alt="Mars Rover"
+                            />
+                        </div>
                     </TransitionInview>
                     <TransitionInview>
                         <SpacexPatches />
