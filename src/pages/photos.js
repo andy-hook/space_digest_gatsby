@@ -1,7 +1,7 @@
 import React from "react";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
-import PhotoCollection from "../components/PhotoCollection";
+import PhotoCollection from "../components/PhotoCollection/PhotoCollection";
 import { useSpring, animated } from "react-spring";
 import TransitionPageIn from "../components/TransitionPageIn";
 

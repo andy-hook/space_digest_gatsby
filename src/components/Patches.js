@@ -17,7 +17,7 @@ function Patches({ items }) {
     );
 
     return (
-        <ul className="mx-auto grid gap-6 md:grid-cols-4 mb-12 cursor-pointer">
+        <ul className="mx-auto grid gap-6 md:grid-cols-4 md:my-32 cursor-pointer">
             {springs.map(({ y, opacity }, i) => {
                 const item = items[i];
 

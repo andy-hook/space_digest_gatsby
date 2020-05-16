@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import useFetch from "../hooks/useFetch";
-import Loader from "./base/Loader";
-import Pagination from "./base/Pagination";
-import chunkArray from "../utils/chunkArray";
+import useFetch from "../../hooks/useFetch";
+import Loader from "../base/Loader";
+import Pagination from "../base/Pagination";
+import chunkArray from "../../utils/chunkArray";
 import Photos from "./Photos";
 
 const PHOTOS_PER_PAGE = 15;
