@@ -7,7 +7,6 @@ import FiftyFifty from "../components/base/FiftyFifty";
 import nasa_logo from "../images/nasa_logo.svg";
 import img_tile_1 from "../images/img_tile_1.svg";
 import img_tile_2 from "../images/img_tile_2.svg";
-import Button from "../components/base/Button";
 import { useSpring, animated } from "react-spring";
 import TransitionPageIn from "../components/TransitionPageIn";
 import TransitionInview from "../components/TransitionInview";

@@ -8,6 +8,7 @@ import VideoFeatured from "../components/base/VideoFeatured";
 import spacex from "../images/spacex.png";
 import Moment from "react-moment";
 import TransitionPageIn from "../components/TransitionPageIn";
+import TransitionInview from "../components/TransitionInview";
 
 function Launch(props) {
     const res = useFetch("https://api.spacexdata.com/v3/launches", []);
@@ -45,8 +46,9 @@ function Launch(props) {
                 ]}
                 title="Spacex launches"
             />
-            <TransitionPageIn>
-                <div className="mx-auto pt-24 mb-16 md:mb-12 md:pt-32 md:mb-40">
+
+            <div className="mx-auto pt-24 mb-16 md:mb-12 md:pt-32 md:mb-40">
+                <TransitionPageIn>
                     <div className="container md:flex md:flex-row-reverse items-end">
                         <Link
                             className="order-first block text-black text-xl md:text-2xl underline hover:color-teal-300 mb-4 md:mb-10"
@@ -54,20 +56,22 @@ function Launch(props) {
                         >
                             Back
                         </Link>
-                        {/* <h1 className="inline-block flex-1 mt-0 mb-8">
-                            {props.match.params.id}
-                        </h1> */}
+                        <h2 className="inline-block flex-1 mt-0 mb-8">
+                            {props.id}
+                        </h2>
                     </div>
-
-                    {!pageData[0].upcoming ? (
+                </TransitionPageIn>
+                {!pageData[0].upcoming ? (
+                    <TransitionPageIn>
                         <VideoFeatured
                             className="container mb-10"
                             width="100vw"
                             height="46vw"
                             url={pageData[0].links.video_link}
                         />
-                    ) : null}
-
+                    </TransitionPageIn>
+                ) : null}
+                <TransitionPageIn>
                     <div className="container flex flex-col md:flex-row md:mt-24 md:mb-40git res">
                         <div className="flex-1 bg-gray-100  mt-10 md:mt-0 md:mr-20">
                             <img
@@ -81,29 +85,80 @@ function Launch(props) {
                             />
                         </div>
                         <div className="flex-1">
-                            <div className="h-full md:flex flex-col justify-between">
+                            <div className="w-3/4 h-full md:flex flex-col justify-between">
                                 <div>
-                                    <h2 className="hidden md:inline-block mt-10 md:mt-0 md:mb-8">
+                                    <h2 className="hidden md:inline-block mt-10 md:mt-0 md:mb-6">
                                         {props.id}
                                     </h2>
 
                                     <p className="inline-block">
                                         {pageData[0].details}
                                     </p>
-                                    {pageData[0].failure_details ? (
-                                        <p className="inline-block pb-8">
-                                            Failure details:{" "}
-                                            {pageData[0].failure_details.reason}
-                                        </p>
+                                    {pageData[0].launch_failure_details ? (
+                                        <>
+                                            <ul className="mt-10">
+                                                <li>
+                                                    Rocket name:{" "}
+                                                    <span className="font-bold">
+                                                        {
+                                                            pageData[0].rocket
+                                                                .rocket_name
+                                                        }
+                                                    </span>
+                                                </li>
+                                                <li>
+                                                    Rocket type:{" "}
+                                                    <span className="font-bold">
+                                                        {
+                                                            pageData[0].rocket
+                                                                .rocket_type
+                                                        }
+                                                    </span>
+                                                </li>
+                                                <li>
+                                                    Payload type:{" "}
+                                                    <span className="font-bold">
+                                                        {
+                                                            pageData[0].rocket
+                                                                .second_stage
+                                                                .payloads[0]
+                                                                .payload_type
+                                                        }
+                                                    </span>
+                                                </li>
+                                                <li>
+                                                    Launch status:{" "}
+                                                    <span className="font-bold">
+                                                        {pageData[0]
+                                                            .launch_success
+                                                            ? "Success"
+                                                            : "Failed"}
+                                                    </span>
+                                                </li>
+                                                <li className="block mt-6 mb-2">
+                                                    Failure details:{" "}
+                                                    <span className="font-bold">
+                                                        {
+                                                            pageData[0]
+                                                                .launch_failure_details
+                                                                .reason
+                                                        }
+                                                    </span>
+                                                </li>
+                                                <li className="block mt-6 mb-2">
+                                                    Launch Date:{" "}
+                                                    <span className="font-bold">
+                                                        <Moment format="DD/MM/YYYY">
+                                                            {
+                                                                pageData[0]
+                                                                    .launch_date
+                                                            }
+                                                        </Moment>
+                                                    </span>
+                                                </li>
+                                            </ul>
+                                        </>
                                     ) : null}
-
-                                    <p className="block text-bold mb-10 md:mt-8 ">
-                                        {" "}
-                                        <strong>Launch Date:&nbsp;</strong>
-                                        <Moment format="DD/MM/YYYY">
-                                            {pageData[0].launch_date}
-                                        </Moment>
-                                    </p>
                                 </div>
 
                                 <div>
@@ -132,10 +187,12 @@ function Launch(props) {
                             </div>
                         </div>
                     </div>
-                    {/* Load Images if present */}
-                    {pageData[0].links.flickr_images !== undefined &&
-                    pageData[0].links.flickr_images.length > 0 ? (
-                        <>
+                </TransitionPageIn>
+                {/* Load Images if present */}
+                {pageData[0].links.flickr_images !== undefined &&
+                pageData[0].links.flickr_images.length > 0 ? (
+                    <>
+                        <TransitionPageIn>
                             <div className="container mx-auto mt-20 md:mt-32">
                                 <h2 className="md:inline-block bg-teal-300 mt-10 md:mt-0">
                                     Launch Images
@@ -156,10 +213,10 @@ function Launch(props) {
                                     }
                                 )}
                             </div>
-                        </>
-                    ) : null}
-                </div>
-            </TransitionPageIn>
+                        </TransitionPageIn>
+                    </>
+                ) : null}
+            </div>
         </Layout>
     );
 }
