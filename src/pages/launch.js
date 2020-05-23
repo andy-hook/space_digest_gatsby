@@ -61,14 +61,14 @@ function Launch(props) {
 
                     {!pageData[0].upcoming ? (
                         <VideoFeatured
-                            className="w-screen mb-10"
+                            className="container mb-10"
                             width="100vw"
                             height="46vw"
                             url={pageData[0].links.video_link}
                         />
                     ) : null}
 
-                    <div className="container flex flex-col md:flex-row md:my-20">
+                    <div className="container flex flex-col md:flex-row md:mt-24 md:mb-40">
                         <div className="flex-1 bg-gray-100  mt-10 md:mt-0 md:mr-20">
                             <img
                                 className="py-10 px-10 md:py-20 md:px-20 inline-block bg-grey-300"
