@@ -68,7 +68,7 @@ function Launch(props) {
                         />
                     ) : null}
 
-                    <div className="container flex flex-col md:flex-row md:mt-24 md:mb-40">
+                    <div className="container flex flex-col md:flex-row md:mt-24 md:mb-40git res">
                         <div className="flex-1 bg-gray-100  mt-10 md:mt-0 md:mr-20">
                             <img
                                 className="py-10 px-10 md:py-20 md:px-20 inline-block bg-grey-300"
