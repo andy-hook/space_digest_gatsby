@@ -23,7 +23,7 @@ function Patches({ items }) {
 
                 return (
                     <animated.li
-                        key={item.name}
+                        key={item.mission_name}
                         style={{
                             opacity: opacity.interpolate(
                                 (opacity) => `${opacity}`
@@ -34,7 +34,7 @@ function Patches({ items }) {
                         }}
                     >
                         <Card
-                            link={`/space-x/launch/${item.mission_name}`}
+                            link={`/app/launch/${item.mission_name}`}
                             image={
                                 item.links.mission_patch
                                     ? item.links.mission_patch
