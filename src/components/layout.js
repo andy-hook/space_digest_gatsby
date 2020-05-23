@@ -1,24 +1,22 @@
 import PropTypes from "prop-types";
 import React from "react";
-import Navigation from "./base/Navigation";
-import Footer from "./base/Footer";
+import Navigation from "./base/navigation";
+import Footer from "./base/footer";
 
 function Layout({ children }) {
-  return (
-    <>
-     <Navigation />
+    return (
+        <>
+            <Navigation />
 
-      <main>
-        {children}
-      </main>
+            <main>{children}</main>
 
-      <Footer />
-    </>
-  );
+            <Footer />
+        </>
+    );
 }
 
 Layout.propTypes = {
-  children: PropTypes.node.isRequired,
+    children: PropTypes.node.isRequired,
 };
 
 export default Layout;

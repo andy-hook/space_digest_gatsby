@@ -9,13 +9,12 @@ const START_ON_PAGE_NUMBER = 1;
 const PATCHES_PER_PAGE = 16;
 
 function SpacexPatches() {
-    const res = useFetch("https://api.spacexdata.com/v3/launches", {});
+    const res = useFetch("https://api.spacexdata.com/v3/launches", []);
+
     console.log("Launches fetched! --->>>", res.response);
 
     const [currentPage, setCurrentPage] = useState(START_ON_PAGE_NUMBER);
     const [patchesToDisplay, setPatchesToDisplay] = useState();
-
-    console.log("Launches fetched! --->>>", res);
 
     const changePage = (pageNumber) => setCurrentPage(pageNumber);
 

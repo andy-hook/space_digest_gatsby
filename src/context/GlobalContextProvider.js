@@ -1,25 +1,44 @@
-import React from "react";
-export const GlobalStateContext = React.createContext();
-export const GlobalDispatchContext = React.createContext();
+import React, { useReducer, useContext, createContext } from "react";
+// import { SPACEX_CONTEXT } from "../types";
 
-import useFetch from "../hooks/useFetch";
+import Launches from "./SpacexLaunchesContext";
 
-// const res = useFetch("https://api.nasa.gov/mars-photos/api/v1", {});
+export const GlobalStateContext = createContext();
+export const GlobalDispatchContext = createContext();
 
-const initialState = {};
+const initialState = {
+    result: null,
+    loading: true,
+    error: null,
+};
 
-function reducer(action, reducer) {
-    switch (action.type) {
-        case value:
-            break;
-
-        default:
-            throw new Error("Bad action type");
+function reducer(state, action) {
+    if (action.type === "LOADING") {
+        return {
+            result: null,
+            loading: true,
+            error: null,
+        };
     }
+    if (action.type === "RESPONSE_COMPLETE") {
+        return {
+            result: action.payload.response,
+            loading: false,
+            error: null,
+        };
+    }
+    if (action.type === "ERROR") {
+        return {
+            result: null,
+            loading: false,
+            error: action.payload.error,
+        };
+    }
+    return state;
 }
 
 const GlobalContextProvider = ({ children }) => {
-    const [state, dispatch] = React.useReducer(reducer, initialState);
+    const [state, dispatch] = useReducer(reducer, initialState);
     return (
         <GlobalStateContext.Provider value={state}>
             <GlobalDispatchContext.Provider value={dispatch}>

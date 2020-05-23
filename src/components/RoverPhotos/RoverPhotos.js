@@ -5,15 +5,16 @@ import Moment from "react-moment";
 import chunkArray from "../../utils/chunkArray";
 import Pagination from "../base/Pagination";
 import Photos from "./Photos";
+import Button from "../base/Button";
 
 const PHOTOS_PER_PAGE = 15;
 const START_ON_PAGE_NUMBER = 1;
 
 function RoverPhotos() {
-    const randomSol = Math.floor(Math.random() * 1000);
+    const randomSol = Math.floor(Math.random() * 2764);
 
     const res = useFetch(
-        `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=${randomSol}&api_key=24TE7EgNfmXIvdb6vNNZGBWx8s54XbZzCCi2oAdN`,
+        `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=${randomSol}&camera=navcam&api_key=24TE7EgNfmXIvdb6vNNZGBWx8s54XbZzCCi2oAdN`,
         {}
     );
 
@@ -21,29 +22,6 @@ function RoverPhotos() {
 
     const [currentPage, setCurrentPage] = useState(START_ON_PAGE_NUMBER);
     const [photosToDisplay, setPhotosToDisplay] = useState();
-
-    useEffect(
-        (res) => {
-            if (res) {
-                setPhotosToDisplay((res) => {
-                    res.response.photos
-                        .filter((item) => item.camera.name.includes("NAVCAM"))
-                        .map((photo) => {
-                            return {
-                                id: photo.id,
-                                img_src: photo.img_src,
-                                earth_date: photo.earth_date,
-                                name: photo.rover.name,
-                                status: photo.rover.status,
-                                launch_date: photo.rover.launch_date,
-                                landing_date: photo.rover.landing_date,
-                            };
-                        });
-                });
-            }
-        },
-        [res.response]
-    );
 
     useEffect(() => {
         if (res.response) {
@@ -58,32 +36,36 @@ function RoverPhotos() {
         }
     }, [res.response]);
 
-    // const photos = res.response.photos.filter((item) =>
-    //     item.camera.name.includes("NAVCAM")
-    // );
+    console.log("Photos to display ->", photosToDisplay);
 
-    // Render Photo component
     function renderPhotoPage(pageIndex) {
         return <Photos items={photosToDisplay[pageIndex]} key={pageIndex} />;
     }
 
     const changePage = (pageNumber) => setCurrentPage(pageNumber);
 
-    console.log("Display ->", photosToDisplay);
+    function refreshPage() {
+        window.location.reload(false);
+    }
+
     return (
         <>
             {photosToDisplay ? (
                 <div className="container">
                     <div className="md:flex justify-between items-end mb-8 md:mb-14">
-                        <h2 className=" inline-block w-full">
-                            Photo from Mars
-                        </h2>
+                        <div>
+                            <h2 className=" inline-block w-full">
+                                Photo from Mars
+                            </h2>
+                        </div>
+
                         <Pagination
                             numberOfPages={photosToDisplay.length}
                             onPageChange={changePage}
                             activePageNumber={currentPage}
                         />
                     </div>
+
                     {renderPhotoPage(currentPage - 1)}
                 </div>
             ) : (

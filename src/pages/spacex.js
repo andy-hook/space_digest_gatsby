@@ -1,17 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import SpacexPatches from "../components/SpacexPatches/SpacexPatches";
 import spacex_logo from "../images/spacex_logo.svg";
-// import { useSpring, animated } from "react-spring";
 import TransitionPageIn from "../components/TransitionPageIn";
 import TransitionInview from "../components/TransitionInview";
 
-function Spacex() {
+function Spacex(props) {
     //Fade animation
     // const fade = useSpring({ opacity: 1, from: { opacity: 0 } });
     // const props = useSpring({ number: 2002, from: { number: 0 } });
-
+    console.log("Props", props);
     return (
         <Layout>
             <SEO

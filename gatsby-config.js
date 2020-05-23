@@ -5,6 +5,7 @@ const fullConfig = resolveConfig(tailwindConfig);
 
 module.exports = {
     siteMetadata: {
+        siteUrl: `https://www.spacedigest.live`,
         title: `spacedigest.live`,
         description: `For space aficionados`,
         author: ``,
@@ -21,6 +22,7 @@ module.exports = {
         `gatsby-plugin-react-helmet`,
         `gatsby-plugin-styled-components`,
         `gatsby-plugin-postcss`,
+        `gatsby-plugin-sitemap`,
         {
             resolve: `gatsby-plugin-manifest`,
             options: {

@@ -42,7 +42,7 @@ function FiftyFifty({
                         <h2 className="hidden md:block font-title font-bold md:inline-block mt-10">
                             {title}
                         </h2>
-                        <p className="block text-bold pt-3 md:pt-6 md:pt-0  md:mt-4">
+                        <p className="block text-bold pt-3 md:pt-0  md:mt-4">
                             {text}
                         </p>
                     </div>
