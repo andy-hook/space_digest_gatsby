@@ -6,8 +6,6 @@ import Moment from "react-moment";
 let startDate = "2020-03-01";
 let endDate = "2020-03-01";
 
-// API_KEY = "api_key=24TE7EgNfmXIvdb6vNNZGBWx8s54XbZzCCi2oAdN";
-
 function Asteroids() {
     const res = useFetch(
         `https://api.nasa.gov/neo/rest/v1/neo/browse?api_key=DEMO_KEY&api_key=DEMO_KEY`,

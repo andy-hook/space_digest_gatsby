@@ -28,7 +28,7 @@ function Launch(props) {
 
     // console.log("location", props.id);
     // console.log("Name", pageData[0].mission_name);
-    console.log("PageData", pageData);
+    // console.log("PageData", pageData);
 
     return (
         <Layout>
@@ -46,7 +46,7 @@ function Launch(props) {
                 title="Spacex launches"
             />
             <TransitionPageIn>
-                <div className="mx-auto pt-24 mb-16 md:mb-12 md:pt-32 md:mb-10">
+                <div className="mx-auto pt-24 mb-16 md:mb-12 md:pt-32 md:mb-40">
                     <div className="container md:flex md:flex-row-reverse items-end">
                         <Link
                             className="order-first block text-black text-xl md:text-2xl underline hover:color-teal-300 mb-4 md:mb-10"
