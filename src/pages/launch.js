@@ -200,7 +200,7 @@ function Launch(props) {
                         <>
                             <TransitionInview>
                                 <div className="container mx-auto mt-20 md:mt-32">
-                                    <h2 className="md:inline-block bg-teal-300 mt-10 md:mt-0">
+                                    <h2 className="md:inline-block mt-10 md:mt-0">
                                         Launch Images
                                     </h2>
                                 </div>

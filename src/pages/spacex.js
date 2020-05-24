@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import SpacexPatches from "../components/SpacexPatches/SpacexPatches";
@@ -7,9 +7,6 @@ import TransitionPageIn from "../components/TransitionPageIn";
 import TransitionInview from "../components/TransitionInview";
 
 function Spacex() {
-    //Fade animation
-    // const fade = useSpring({ opacity: 1, from: { opacity: 0 } });
-    // const props = useSpring({ number: 2002, from: { number: 0 } });
     return (
         <Layout>
             <SEO
@@ -27,10 +24,10 @@ function Spacex() {
             />
             <TransitionPageIn>
                 <div className="pt-20 md:pt-24">
-                    <div className="mb-6 md:mb-12">
-                        <div className="w-9/12 mx-auto text-center">
+                    <TransitionInview>
+                        <div className="container w-7/12 mx-auto text-left mb-6 md:mb-12">
                             <h1 className="md:text-9xl text-5xl">SpaceX</h1>
-                            <h3 className="md:w-7/12 mx-auto md:leading-tight mb-5">
+                            <h3 className="md:w-7/12 md:leading-tight mb-5">
                                 SpaceX designs, manufactures and launches
                                 advanced rockets and spacecraft. The company was
                                 founded in 2002 to revolutionize space
@@ -44,7 +41,8 @@ function Spacex() {
                                 Address: Rocket Road
                             </p>
                         </div>
-                    </div>
+                    </TransitionInview>
+
                     <TransitionInview>
                         <div className="w-full bg-primary mt-10 sm:mt-12 mb-0 mb-10 md:mb-16 md:mb-20 rounded-md py-8 md:py-40 px-8 md:py-20 md:px-20">
                             <img

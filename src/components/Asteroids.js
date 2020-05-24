@@ -3,12 +3,9 @@ import useFetch from "../hooks/useFetch";
 import Loader from "./base/Loader";
 import Moment from "react-moment";
 
-let startDate = "2020-03-01";
-let endDate = "2020-03-01";
-
 function Asteroids() {
     const res = useFetch(
-        `https://api.nasa.gov/neo/rest/v1/neo/browse?api_key=DEMO_KEY&api_key=DEMO_KEY`,
+        `https://api.nasa.gov/neo/rest/v1/neo/browse?api_key=24TE7EgNfmXIvdb6vNNZGBWx8s54XbZzCCi2oAdN`,
         {}
     );
 
@@ -23,18 +20,12 @@ function Asteroids() {
     }
 
     const asteroidData = res.response.near_earth_objects;
-    console.log(asteroidData);
-
-    const test = asteroidData[0].close_approach_data[0].miss_distance;
-
-    console.log("TEST-->", test);
+    console.log("asteroidData", asteroidData);
 
     return (
         // Asteroids
-        <div className="container mx-auto text-left mb-12 md:pt-12">
-            <h2 className="md:w-74 bg-primary mb-8 md:mb-0">
-                Passing close to Earth
-            </h2>
+        <div className="w-8/12 mx-auto text-left mb-12 md:pt-12">
+            <h2 className="md:w-60 mb-8 md:mb-0">Passing close to Earth</h2>
             <div className="mx-auto pr-30 pb-10 md:mt-10">
                 <div className="flex pt-4 md:pl-4">
                     <span className="w-1/4 font-bold text-xxs md:text-sm">
@@ -85,7 +76,11 @@ function Asteroids() {
                                     className="w-1/5 h-10 md:h-12 pl-2 md:pl-4 pt-3 md:pt-4 text-xxs md:text-sm"
                                     key={asteroid.id}
                                 >
-                                    {asteroid.close_approach_data[0].relative_velocity.kilometers_per_second}
+                                    {
+                                        asteroid.close_approach_data[0]
+                                            .relative_velocity
+                                            .kilometers_per_second
+                                    }
                                 </li> */}
                                 {/* <li
                                     className="w-1/5 bg-gray-100 h-10 md:h-12 pl-2 md:pl-4 pt-2 md:pt-4 text-xxs md:text-sm"
