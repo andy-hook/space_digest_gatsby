@@ -46,9 +46,9 @@ function Spacex() {
                         </div>
                     </div>
                     <TransitionInview>
-                        <div className="w-full bg-primary mt-10 sm:mt-12 mb-0 md:mb-16 md:mb-20 rounded-md py-8 md:py-40 px-16 md:py-20 md:px-20">
+                        <div className="w-full bg-primary mt-10 sm:mt-12 mb-0 mb-10 md:mb-16 md:mb-20 rounded-md py-8 md:py-40 px-8 md:py-20 md:px-20">
                             <img
-                                className="w-9/12 mx-auto pl-32"
+                                className="md:w-9/12 mx-auto md:pl-32"
                                 src={spacex_logo}
                                 alt="Mars Rover"
                             />
