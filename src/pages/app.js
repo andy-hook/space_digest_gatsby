@@ -1,6 +1,6 @@
 import React from "react";
 import { Router } from "@reach/router";
-import Launch from "./Launch";
+import Launch from "./launch";
 
 const App = () => {
     return (
