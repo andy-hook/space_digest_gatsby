@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import React from "react";
-import Navigation from "./base/navigation";
-import Footer from "./base/footer";
+import Navigation from "./base/Navigation";
+import Footer from "./base/Footer";
 
 function Layout({ children }) {
     return (

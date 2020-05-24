@@ -48,7 +48,7 @@ function Launch(props) {
             />
 
             <div className="mx-auto pt-24 mb-16 md:mb-12 md:pt-32 md:mb-40">
-                <TransitionPageIn>
+                <TransitionInview>
                     <div className="container md:flex md:flex-row-reverse items-end">
                         <Link
                             className="order-first block text-black text-xl md:text-2xl underline hover:color-teal-300 mb-4 md:mb-10"
@@ -60,18 +60,18 @@ function Launch(props) {
                             {props.id}
                         </h2>
                     </div>
-                </TransitionPageIn>
+                </TransitionInview>
                 {!pageData[0].upcoming ? (
-                    <TransitionPageIn>
+                    <TransitionInview>
                         <VideoFeatured
                             className="container mb-10"
                             width="100vw"
                             height="46vw"
                             url={pageData[0].links.video_link}
                         />
-                    </TransitionPageIn>
+                    </TransitionInview>
                 ) : null}
-                <TransitionPageIn>
+                <TransitionInview>
                     <div className="container flex flex-col md:flex-row md:mt-24 md:mb-40git res">
                         <div className="flex-1 bg-gray-100  mt-10 md:mt-0 md:mr-20">
                             <img
@@ -187,12 +187,12 @@ function Launch(props) {
                             </div>
                         </div>
                     </div>
-                </TransitionPageIn>
+                </TransitionInview>
                 {/* Load Images if present */}
                 {pageData[0].links.flickr_images !== undefined &&
                 pageData[0].links.flickr_images.length > 0 ? (
                     <>
-                        <TransitionPageIn>
+                        <TransitionInview>
                             <div className="container mx-auto mt-20 md:mt-32">
                                 <h2 className="md:inline-block bg-teal-300 mt-10 md:mt-0">
                                     Launch Images
@@ -213,7 +213,7 @@ function Launch(props) {
                                     }
                                 )}
                             </div>
-                        </TransitionPageIn>
+                        </TransitionInview>
                     </>
                 ) : null}
             </div>
