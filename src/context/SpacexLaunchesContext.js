@@ -4,7 +4,7 @@ import useFetch from "../hooks/useFetch";
 export const SpacexLaunchesContext = createContext();
 
 export function SpacexLaunchesProvider(props) {
-    const res = useFetch("/api/spacex/launch", {});
+    const res = useFetch("https://api.spacexdata.com/v3/launches", []);
 
     return (
         <SpacexLaunchesContext.Provider value={res}>
