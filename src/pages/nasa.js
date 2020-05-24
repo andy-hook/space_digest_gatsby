@@ -70,12 +70,21 @@ function Nasa() {
                             </h3>
                         </div>
                         <TransitionInview>
-                            <div className="w-full bg-primary mt-10 sm:mt-12 mb-0 md:mb-16 md:mb-20 rounded-md py-10 px-16 md:py-20 md:px-20">
-                                <img
+                            <div className="w-full bg-primary mt-10 sm:mt-12 mb-0 md:mb-16 md:mb-20 py-2">
+                                {/* <img
                                     className="w-7/12 mx-auto md:pl-20"
                                     src={nasa_logo}
                                     alt="Mars Rover"
-                                />
+                                /> */}
+                                <div
+                                    class=" h-20 md:h-64 bg-fixed md:my-20 "
+                                    style={{
+                                        backgroundImage: `url(${nasa_logo})`,
+                                        backgroundPosition: "center",
+                                        backgroundSize: "contain",
+                                        backgroundRepeat: "no-repeat",
+                                    }}
+                                ></div>
                             </div>
                         </TransitionInview>
                     </div>
