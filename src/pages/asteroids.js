@@ -27,8 +27,8 @@ function Page__asteroids() {
                 title="Nasa"
             />
             <TransitionPageIn>
-                <div className="md:w-9/12 mx-auto text-center pt-24">
-                    <h1 className="mb-3">Asteroids</h1>
+                <div className="px-5 md:w-8/12 mx-auto text-center pt-24">
+                    <h1 className="md:text-9xl text-5xl mb-5">Asteroids</h1>
 
                     <h3 className="md:w-3/5 mx-auto md:leading-tight mb-1">
                         NeoWs (Near Earth Object Web Service) is a web service

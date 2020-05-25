@@ -24,7 +24,9 @@ function AboutPage() {
             />
             <TransitionPageIn>
                 <div className="container md:w-3/4 mx-auto pt-24 md:pt-30 md:mb-32">
-                    <h1 className="w-2/4 md:text-9xl text-5xl mb-3">About</h1>
+                    <h2 className="w-2/4 text-5xl md:text-6xl mb-3 pt-10">
+                        About
+                    </h2>
                     <p className="md:w-2/4 block">
                         Space Digest is an informational website created as a
                         personal project for fans of Nasa, SpaceX and space in
