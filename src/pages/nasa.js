@@ -68,31 +68,16 @@ function Nasa() {
 
                     <div className="container md:w-9/12 mx-auto mb-10 mt-0 md:mt-20">
                         {/* <MarsWeather /> */}
-                        <TransitionInview>
-                            <div className="container mx-auto text-left md:flex mt-32 mb-24 border-b-2 border-black ">
-                                <h2 className="md:w-4/12 line-block flex-1 mb-8 mx-auto">
-                                    Mars rovers
-                                </h2>
 
-                                <p className="md:w-7/12 mb-12 mx-auto">
-                                    Spirit and Opportunity landed on Mars
-                                    January 3 and January 24, 2004 PST (Jan. 4
-                                    and Jan. 25 UTC). Both rovers lived well
-                                    beyond their planned 90-day missions. Spirit
-                                    and Opportunity found evidence for past wet
-                                    conditions that possibly could have
-                                    supported microbial life.
-                                </p>
-                            </div>
-                        </TransitionInview>
-
-                        <h3 className="md:w-4/5 line-block flex-1 mb-6 font-bold">
-                            Mars Rover Images
-                        </h3>
-                        <p className="md:w-3/5 mb-10">
-                            Select your favourite Mars Rover and three different
-                            cameras to display images from Mars
-                        </p>
+                        <div className="w-7/12 mx-auto md:text-center">
+                            <h3 className="mb-6 font-bold">
+                                Mars Rover Images
+                            </h3>
+                            <p className="mb-10">
+                                Select your favourite Mars Rover and three
+                                different cameras to display images from Mars
+                            </p>
+                        </div>
 
                         <Select />
 

@@ -5,6 +5,7 @@ import Moment from "react-moment";
 import chunkArray from "../../utils/chunkArray";
 import Pagination from "../base/Pagination";
 import Photos from "./Photos";
+import TransitionInview from "../TransitionInview";
 
 const PHOTOS_PER_PAGE = 15;
 const START_ON_PAGE_NUMBER = 1;
@@ -43,35 +44,91 @@ function RoverPhotos() {
 
     const photoData = JSON.parse(JSON.stringify(res.response));
 
-    console.log("photoData", photoData.photos[0]);
+    console.log("photoData", photoData);
+
+    console.log(typeof photoData);
 
     return (
         <>
-            <div className="grid grid-cols-3 gap-4 bg-secondary px-6 py-6 rounded-md mb-6 mt-12">
-                <h4>Rover name: {photoData.photos[0].rover.name}</h4>
-                <h4>Mars Sol: {photoData.photos[0].sol}</h4>
-                <h4>
-                    Earth Date:
-                    <Moment format="DD/MM/YYYY">
-                        {photoData.photos[0].earth_date}
-                    </Moment>
-                </h4>
-
-                <h4>
-                    Launch Date:
-                    <Moment format="DD/MM/YY">
-                        {photoData.photos[0].rover.launch_date}
-                    </Moment>
-                </h4>
-
-                <h4>
-                    Landing Date:
-                    <Moment format="DD/MM/YY">
-                        {photoData.photos[0].rover.landing_date}
-                    </Moment>
-                </h4>
-                <h4>Status: {photoData.photos[0].rover.status}</h4>
+            <div className="grid grid-cols-4 gap-4 bg-secondary px-12 py-10 rounded-md mb-6 mt-12 text-center">
+                <div>
+                    <span className="block uppercase text-xs text-gray-700">
+                        Rover name:
+                    </span>{" "}
+                    <span className="block">
+                        {photoData.photos[0].rover.name}
+                    </span>
+                </div>
+                <div>
+                    <span className="block uppercase text-xs text-gray-700">
+                        Mars Sol:
+                    </span>{" "}
+                    <span className="block">{photoData.photos[0].sol}</span>
+                </div>
+                <div>
+                    <span className="block uppercase text-xs text-gray-700">
+                        Earth Date:
+                    </span>{" "}
+                    <span className="block">
+                        <Moment format="DD/MM/YYYY">
+                            {photoData.photos[0].earth_date}
+                        </Moment>
+                    </span>
+                </div>
+                <div>
+                    <span className="block uppercase text-xs text-gray-700">
+                        Mars Sol:
+                    </span>{" "}
+                    <span className="block">{photoData.photos[0].sol}</span>
+                </div>
+                <div>
+                    <span className="block uppercase text-xs text-gray-700">
+                        Mars Sol:
+                    </span>{" "}
+                    <span className="block">{photoData.photos[0].sol}</span>
+                </div>
+                <div>
+                    <span className="block uppercase text-xs text-gray-700">
+                        Mars Sol:
+                    </span>{" "}
+                    <span className="block">{photoData.photos[0].sol}</span>
+                </div>
+                <div>
+                    <span className="block uppercase text-xs text-gray-700">
+                        Launch Date:
+                    </span>{" "}
+                    <span className="block">
+                        <Moment format="DD/MM/YY">
+                            {photoData.photos[0].rover.launch_date}
+                        </Moment>
+                    </span>
+                </div>
+                <div>
+                    <span className="block uppercase text-xs text-gray-700">
+                        Status:
+                    </span>{" "}
+                    <span className="block">
+                        {photoData.photos[0].rover.status}
+                    </span>
+                </div>
             </div>
+
+            <TransitionInview>
+                <div className="container mx-auto  md:flex mt-32 mb-24 border-b-2 border-black text-left">
+                    <h2 className="md:w-4/12 line-block flex-1 mb-8 mx-auto">
+                        Mars rovers
+                    </h2>
+
+                    <p className="md:w-7/12 mb-12 mx-auto">
+                        Spirit and Opportunity landed on Mars January 3 and
+                        January 24, 2004 PST (Jan. 4 and Jan. 25 UTC). Both
+                        rovers lived well beyond their planned 90-day missions.
+                        Spirit and Opportunity found evidence for past wet
+                        conditions that possibly could have supported microbial
+                        life.
+                    </p>
+                </div>
+            </TransitionInview>
 
             {photosToDisplay ? (
                 <div className="container">
