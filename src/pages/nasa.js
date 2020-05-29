@@ -5,6 +5,7 @@ import { useSpring, animated } from "react-spring";
 import RoverPhotos from "../components/RoverPhotos/RoverPhotos";
 import nasa_logo from "../images/nasa_logo.svg";
 import makeAnimated from "react-select/animated";
+import FiftyFifty from "../components/base/FiftyFifty";
 import TransitionPageIn from "../components/TransitionPageIn";
 import TransitionInview from "../components/TransitionInview";
 import Select from "../components/roverSelect";
@@ -84,6 +85,14 @@ function Nasa() {
                                 </p>
                             </div>
                         </TransitionInview>
+
+                        <h3 className="md:w-4/5 line-block flex-1 mb-6 font-bold">
+                            Mars Rover Images
+                        </h3>
+                        <p className="md:w-3/5 mb-10">
+                            Select your favourite Mars Rover and three different
+                            cameras to display images from Mars
+                        </p>
 
                         <Select />
 

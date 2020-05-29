@@ -52,19 +52,11 @@ function RoverPhotos() {
         <>
             {photosToDisplay ? (
                 <div className="container">
-                    <div className="md:flex justify-between items-end mb-8 md:mb-14">
-                        <div>
-                            <h2 className=" inline-block w-full">
-                                Photo from Mars
-                            </h2>
-                        </div>
-
-                        <Pagination
-                            numberOfPages={photosToDisplay.length}
-                            onPageChange={changePage}
-                            activePageNumber={currentPage}
-                        />
-                    </div>
+                    <Pagination
+                        numberOfPages={photosToDisplay.length}
+                        onPageChange={changePage}
+                        activePageNumber={currentPage}
+                    />
 
                     {renderPhotoPage(currentPage - 1)}
                 </div>
