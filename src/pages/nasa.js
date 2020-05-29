@@ -1,45 +1,21 @@
 import React, { useState } from "react";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
-import RoverPhotos from "../components/RoverPhotos/RoverPhotos";
-// import MarsWeather from "../../components/MarsWeather";
-import FiftyFifty from "../components/base/FiftyFifty";
-import nasa_logo from "../images/nasa_logo.svg";
 import { useSpring, animated } from "react-spring";
-// import Select from "react-select";
+import RoverPhotos from "../components/RoverPhotos/RoverPhotos";
+import nasa_logo from "../images/nasa_logo.svg";
 import makeAnimated from "react-select/animated";
-// import curiosityRover from "../images/curiosityRover.jpg";
 import TransitionPageIn from "../components/TransitionPageIn";
 import TransitionInview from "../components/TransitionInview";
+import Select from "../components/roverSelect";
+
+// import curiosityRover from "../images/curiosityRover.jpg";
+// import MarsWeather from "../../components/MarsWeather";
 
 function Nasa() {
     const fade = useSpring({ opacity: 1, from: { opacity: 0 } }); //Fade animation
     const [selectRover, setSelectRover] = useState("curiosity");
     const [selectCamera, setSelectCamera] = useState("NAVCAM");
-
-    function reactSelectCustomTheme(theme) {
-        return {
-            ...theme,
-            colors: {
-                ...theme.colors,
-                primary50: "#4AFFE8",
-                primary25: "#81e6d9",
-                primary: "#dbf4f1",
-            },
-        };
-    }
-
-    // Select option for react-select
-    const chooseRover = [
-        { value: "opportunity", label: "Opportunity" },
-        { value: "curiosity", label: "Curiosity" },
-        { value: "spirit", label: "Spirit" },
-    ];
-    const chooseCamera = [
-        { value: "FHAZ", label: "Front Hazard Avoidance Camera" },
-        { value: "NAVCAM", label: "Navigation Camera" },
-        { value: "RHAZ", label: "Rear Hazard Avoidance Camera" },
-    ];
 
     return (
         <Layout>
@@ -91,7 +67,6 @@ function Nasa() {
 
                     <div className="container md:w-9/12 mx-auto mb-10 mt-0 md:mt-20">
                         {/* <MarsWeather /> */}
-
                         <TransitionInview>
                             <div className="container mx-auto text-left md:flex mt-32 mb-24 border-b-2 border-black ">
                                 <h2 className="md:w-4/12 line-block flex-1 mb-8 mx-auto">
@@ -109,6 +84,8 @@ function Nasa() {
                                 </p>
                             </div>
                         </TransitionInview>
+
+                        <Select />
 
                         <TransitionInview>
                             <RoverPhotos />
