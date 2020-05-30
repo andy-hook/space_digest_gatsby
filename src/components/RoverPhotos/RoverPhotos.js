@@ -57,7 +57,7 @@ function RoverPhotos() {
         <>
             {photoData ? (
                 <TransitionInview>
-                    <div className="grid grid-cols-4 gap-4 bg-secondary px-12 py-10 rounded-md mb-6 mt-12 text-center">
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 bg-secondary px-12 py-10 rounded-md mb-6 mt-12 text-center z-0">
                         <div>
                             <span className="block uppercase text-xs text-gray-700">
                                 Rover name:{" "}
@@ -135,12 +135,12 @@ function RoverPhotos() {
             )}
 
             <TransitionInview>
-                <div className="container mx-auto  md:flex mt-32 mb-24 border-b-2 border-black text-left">
-                    <h2 className="md:w-4/12 line-block flex-1 mb-8 mx-auto">
+                <div className="md:container mx-auto md:flex mt-16 md:mt-32 mb-12 md:mb-24 border-b-2 border-black text-left">
+                    <h3 className="md:w-4/12 line-block flex-1 md:mb-8 md:mx-auto text-3xl">
                         Mars rovers
-                    </h2>
+                    </h3>
 
-                    <p className="md:w-7/12 mb-12 mx-auto">
+                    <p className="md:w-7/12 mb-20 mx-auto">
                         Spirit and Opportunity landed on Mars January 3 and
                         January 24, 2004 PST (Jan. 4 and Jan. 25 UTC). Both
                         rovers lived well beyond their planned 90-day missions.
@@ -151,18 +151,31 @@ function RoverPhotos() {
                 </div>
             </TransitionInview>
 
-            <Select />
+            <div className="px-8 md:w-7/12 mx-auto text-center mb-16 md:mb-20">
+                <h2 className="mb-6 font-bold">Mars Rover Images</h2>
+                <p className="mb-10">
+                    Select your favourite Mars Rover and cameras to display
+                    images from Mars
+                </p>
+            </div>
 
             {photosToDisplay ? (
-                <div className="container">
-                    <Pagination
-                        numberOfPages={photosToDisplay.length}
-                        onPageChange={changePage}
-                        activePageNumber={currentPage}
-                    />
+                <>
+                    <div className="md:flex justify-between items-end z-50">
+                        <div className="flex-grow">
+                            <Select />
+                        </div>
+                        <div className="flex-grow flex justify-end">
+                            <Pagination
+                                numberOfPages={photosToDisplay.length}
+                                onPageChange={changePage}
+                                activePageNumber={currentPage}
+                            />
+                        </div>
+                    </div>
 
                     {renderPhotoPage(currentPage - 1)}
-                </div>
+                </>
             ) : (
                 <div className="container mx-auto h-screen text-center">
                     <Loader className="inline-block" />

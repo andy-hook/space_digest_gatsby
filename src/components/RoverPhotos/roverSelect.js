@@ -32,8 +32,8 @@ function RoverSelect() {
 
     return (
         <TransitionInview>
-            <div className="flex mb-10 justify-between z-50">
-                <div className="inline-block sm:w-2/5">
+            <div className="md:flex justify-between z-50">
+                <div className="md:inline-block sm:w-2/5">
                     <h4 className="mb-3">Rover Name</h4>
 
                     <Select
@@ -46,8 +46,8 @@ function RoverSelect() {
                     />
                 </div>
 
-                <div className="inline-block sm:w-2/5">
-                    <h4 className="mb-3">Camera</h4>
+                <div className="md:inline-block sm:w-2/5 mb-10 md:mb-0 mt-6 md:mt-0">
+                    <h4 className="mb-3 ">Camera</h4>
                     <Select
                         onChange={setSelectCamera}
                         options={chooseCamera}

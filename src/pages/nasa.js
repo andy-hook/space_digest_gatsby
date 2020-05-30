@@ -64,18 +64,8 @@ function Nasa() {
                         </TransitionInview>
                     </div>
 
-                    <div className="container md:w-9/12 mx-auto mb-10 mt-0 md:mt-20">
+                    <div className="px-8 md:w-9/12 mx-auto mb-10 mt-0 md:mt-20">
                         {/* <MarsWeather /> */}
-
-                        <div className="w-7/12 mx-auto md:text-center">
-                            <h3 className="mb-6 font-bold">
-                                Mars Rover Images
-                            </h3>
-                            <p className="mb-10">
-                                Select your favourite Mars Rover and three
-                                different cameras to display images from Mars
-                            </p>
-                        </div>
 
                         <TransitionInview>
                             <RoverPhotos />
