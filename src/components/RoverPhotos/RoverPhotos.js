@@ -86,8 +86,8 @@ function RoverPhotos() {
 
             {photosToDisplay ? (
                 <>
-                    <div className="md:flex justify-between items-end z-50">
-                        <div className="flex-grow">
+                    <div className="md:flex justify-between items-end">
+                        <div className="flex-grow z-50">
                             <RoverSelect />
                         </div>
                         <div className="flex-grow flex justify-end">
