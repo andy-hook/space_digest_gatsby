@@ -6,7 +6,7 @@ import chunkArray from "../../utils/chunkArray";
 import Pagination from "../base/pagination";
 import Photos from "./photos";
 import TransitionInview from "../transitionInview";
-import Select from "./roverSelect";
+import RoverSelect from "./roverSelect";
 
 const PHOTOS_PER_PAGE = 15;
 const START_ON_PAGE_NUMBER = 1;
@@ -53,6 +53,10 @@ function RoverPhotos() {
 
     console.log("photoData", photoData);
 
+    function capitalizeFirstLetter(string) {
+        return string.charAt(0).toUpperCase() + string.slice(1);
+    }
+
     return (
         <>
             <TransitionInview>
@@ -84,7 +88,7 @@ function RoverPhotos() {
                 <>
                     <div className="md:flex justify-between items-end z-50">
                         <div className="flex-grow">
-                            <Select />
+                            <RoverSelect />
                         </div>
                         <div className="flex-grow flex justify-end">
                             <Pagination
@@ -96,7 +100,7 @@ function RoverPhotos() {
                     </div>
                     {photoData ? (
                         <TransitionInview>
-                            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 bg-secondary px-12 py-10 rounded-md mb-6 mt-12 text-center z-0">
+                            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 bg-secondary px-12 py-10 rounded-md mb-6 mt-12 text-center z-0">
                                 <div>
                                     <span className="block uppercase text-xs text-gray-700">
                                         Rover name:{" "}
@@ -123,30 +127,7 @@ function RoverPhotos() {
                                         </Moment>
                                     </span>
                                 </div>
-                                <div>
-                                    <span className="block uppercase text-xs text-gray-700">
-                                        Mars Sol:{" "}
-                                    </span>
-                                    <span className="block">
-                                        {res.response.photos[0].sol}
-                                    </span>
-                                </div>
-                                <div>
-                                    <span className="block uppercase text-xs text-gray-700">
-                                        Mars Sol:{" "}
-                                    </span>
-                                    <span className="block">
-                                        {res.response.photos[0].sol}
-                                    </span>
-                                </div>
-                                <div>
-                                    <span className="block uppercase text-xs text-gray-700">
-                                        Mars Sol:{" "}
-                                    </span>
-                                    <span className="block">
-                                        {res.response.photos[0].sol}
-                                    </span>
-                                </div>
+
                                 <div>
                                     <span className="block uppercase text-xs text-gray-700">
                                         Launch Date:{" "}
@@ -162,10 +143,25 @@ function RoverPhotos() {
                                 </div>
                                 <div>
                                     <span className="block uppercase text-xs text-gray-700">
+                                        Landing Date:{" "}
+                                    </span>
+                                    <span className="block">
+                                        <Moment format="DD/MM/YY">
+                                            {
+                                                res.response.photos[0].rover
+                                                    .landing_date
+                                            }
+                                        </Moment>
+                                    </span>
+                                </div>
+                                <div>
+                                    <span className="block uppercase text-xs text-gray-700">
                                         Status:{" "}
                                     </span>
                                     <span className="block">
-                                        {res.response.photos[0].rover.status}
+                                        {capitalizeFirstLetter(
+                                            res.response.photos[0].rover.status
+                                        )}
                                     </span>
                                 </div>
                             </div>

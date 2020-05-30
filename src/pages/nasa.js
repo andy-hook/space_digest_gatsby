@@ -4,7 +4,6 @@ import SEO from "../components/seo";
 import { useSpring, animated } from "react-spring";
 import RoverPhotos from "../components/roverPhotos/roverPhotos";
 import nasa_logo from "../images/nasa_logo.svg";
-import makeAnimated from "react-select/animated";
 import FiftyFifty from "../components/base/fiftyFifty";
 import TransitionPageIn from "../components/transitionPageIn";
 import TransitionInview from "../components/transitionInview";
@@ -35,7 +34,7 @@ function Nasa() {
                 <div className="mx-auto pt-20 md:pt-24">
                     <div className="mb-12">
                         <div className="w-9/12 mx-auto text-center mb-16">
-                            <h1 className="md:text-9xl text-5xl mb-10">NASA</h1>
+                            <h1 className="md:text-9xl text-5xl mb-5">NASA</h1>
                             <h3 className="md:w-7/12 mx-auto md:leading-tight mb-1">
                                 The National Aeronautics and Space
                                 Administration (NASA) is an independent agency
