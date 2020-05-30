@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import useFetch from "../../hooks/useFetch";
 import Loader from "../base/Loader";
 import Pagination from "../base/Pagination";
-import Patches from "./Patches";
+import Patches from "./patches";
 import chunkArray from "../../utils/chunkArray";
 
 const START_ON_PAGE_NUMBER = 1;

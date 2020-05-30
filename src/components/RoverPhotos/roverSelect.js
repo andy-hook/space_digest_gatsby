@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Select from "react-select";
-import TransitionInview from "../TransitionInview";
+import TransitionInview from "../transitionInview";
 
 function RoverSelect() {
     const [selectCamera, setSelectCamera] = useState("NAVCAM");
