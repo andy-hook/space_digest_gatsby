@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Select from "react-select";
-import TransitionInview from "../components/TransitionInview";
+import TransitionInview from "../TransitionInview";
 
 function RoverSelect() {
     const [selectCamera, setSelectCamera] = useState("NAVCAM");
@@ -32,7 +32,7 @@ function RoverSelect() {
 
     return (
         <TransitionInview>
-            <div className="flex mb-4 justify-between">
+            <div className="flex mb-10 justify-between z-50">
                 <div className="inline-block sm:w-2/5">
                     <h4 className="mb-3">Rover Name</h4>
 

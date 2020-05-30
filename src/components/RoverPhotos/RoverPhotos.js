@@ -6,15 +6,22 @@ import chunkArray from "../../utils/chunkArray";
 import Pagination from "../base/Pagination";
 import Photos from "./Photos";
 import TransitionInview from "../TransitionInview";
+import Select from "./roverSelect";
 
 const PHOTOS_PER_PAGE = 15;
 const START_ON_PAGE_NUMBER = 1;
 
 function RoverPhotos() {
-    const randomSol = Math.floor(Math.random() * 2764);
+    const randomSol = (min, max) => {
+        return Math.floor(Math.random() * (max - min) + min);
+    };
+    console.log("Sol", randomSol(1, 2764));
 
     const res = useFetch(
-        `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=${randomSol}&camera=navcam&api_key=24TE7EgNfmXIvdb6vNNZGBWx8s54XbZzCCi2oAdN`,
+        `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=${randomSol(
+            1,
+            2764
+        )}&camera=navcam&api_key=24TE7EgNfmXIvdb6vNNZGBWx8s54XbZzCCi2oAdN`,
         {}
     );
 
@@ -46,72 +53,86 @@ function RoverPhotos() {
 
     console.log("photoData", photoData);
 
-    console.log(typeof photoData);
-
     return (
         <>
-            <div className="grid grid-cols-4 gap-4 bg-secondary px-12 py-10 rounded-md mb-6 mt-12 text-center">
-                <div>
-                    <span className="block uppercase text-xs text-gray-700">
-                        Rover name:
-                    </span>{" "}
-                    <span className="block">
-                        {photoData.photos[0].rover.name}
-                    </span>
+            {photoData ? (
+                <TransitionInview>
+                    <div className="grid grid-cols-4 gap-4 bg-secondary px-12 py-10 rounded-md mb-6 mt-12 text-center">
+                        <div>
+                            <span className="block uppercase text-xs text-gray-700">
+                                Rover name:{" "}
+                            </span>
+                            <span className="block">
+                                {res.response.photos[0].rover.name}
+                            </span>
+                        </div>
+                        <div>
+                            <span className="block uppercase text-xs text-gray-700">
+                                Mars Sol:{" "}
+                            </span>
+                            <span className="block">
+                                {res.response.photos[0].sol}
+                            </span>
+                        </div>
+                        <div>
+                            <span className="block uppercase text-xs text-gray-700">
+                                Earth Date:{" "}
+                            </span>
+                            <span className="block">
+                                <Moment format="DD/MM/YYYY">
+                                    {res.response.photos[0].earth_date}
+                                </Moment>
+                            </span>
+                        </div>
+                        <div>
+                            <span className="block uppercase text-xs text-gray-700">
+                                Mars Sol:{" "}
+                            </span>
+                            <span className="block">
+                                {res.response.photos[0].sol}
+                            </span>
+                        </div>
+                        <div>
+                            <span className="block uppercase text-xs text-gray-700">
+                                Mars Sol:{" "}
+                            </span>
+                            <span className="block">
+                                {res.response.photos[0].sol}
+                            </span>
+                        </div>
+                        <div>
+                            <span className="block uppercase text-xs text-gray-700">
+                                Mars Sol:{" "}
+                            </span>
+                            <span className="block">
+                                {res.response.photos[0].sol}
+                            </span>
+                        </div>
+                        <div>
+                            <span className="block uppercase text-xs text-gray-700">
+                                Launch Date:{" "}
+                            </span>
+                            <span className="block">
+                                <Moment format="DD/MM/YY">
+                                    {res.response.photos[0].rover.launch_date}
+                                </Moment>
+                            </span>
+                        </div>
+                        <div>
+                            <span className="block uppercase text-xs text-gray-700">
+                                Status:{" "}
+                            </span>
+                            <span className="block">
+                                {res.response.photos[0].rover.status}
+                            </span>
+                        </div>
+                    </div>
+                </TransitionInview>
+            ) : (
+                <div className="container mx-auto pt-12 pb-32">
+                    <Loader className="mx-auto" />
                 </div>
-                <div>
-                    <span className="block uppercase text-xs text-gray-700">
-                        Mars Sol:
-                    </span>{" "}
-                    <span className="block">{photoData.photos[0].sol}</span>
-                </div>
-                <div>
-                    <span className="block uppercase text-xs text-gray-700">
-                        Earth Date:
-                    </span>{" "}
-                    <span className="block">
-                        <Moment format="DD/MM/YYYY">
-                            {photoData.photos[0].earth_date}
-                        </Moment>
-                    </span>
-                </div>
-                <div>
-                    <span className="block uppercase text-xs text-gray-700">
-                        Mars Sol:
-                    </span>{" "}
-                    <span className="block">{photoData.photos[0].sol}</span>
-                </div>
-                <div>
-                    <span className="block uppercase text-xs text-gray-700">
-                        Mars Sol:
-                    </span>{" "}
-                    <span className="block">{photoData.photos[0].sol}</span>
-                </div>
-                <div>
-                    <span className="block uppercase text-xs text-gray-700">
-                        Mars Sol:
-                    </span>{" "}
-                    <span className="block">{photoData.photos[0].sol}</span>
-                </div>
-                <div>
-                    <span className="block uppercase text-xs text-gray-700">
-                        Launch Date:
-                    </span>{" "}
-                    <span className="block">
-                        <Moment format="DD/MM/YY">
-                            {photoData.photos[0].rover.launch_date}
-                        </Moment>
-                    </span>
-                </div>
-                <div>
-                    <span className="block uppercase text-xs text-gray-700">
-                        Status:
-                    </span>{" "}
-                    <span className="block">
-                        {photoData.photos[0].rover.status}
-                    </span>
-                </div>
-            </div>
+            )}
 
             <TransitionInview>
                 <div className="container mx-auto  md:flex mt-32 mb-24 border-b-2 border-black text-left">
@@ -129,6 +150,8 @@ function RoverPhotos() {
                     </p>
                 </div>
             </TransitionInview>
+
+            <Select />
 
             {photosToDisplay ? (
                 <div className="container">

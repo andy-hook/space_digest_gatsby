@@ -8,8 +8,6 @@ import makeAnimated from "react-select/animated";
 import FiftyFifty from "../components/base/FiftyFifty";
 import TransitionPageIn from "../components/TransitionPageIn";
 import TransitionInview from "../components/TransitionInview";
-import Select from "../components/roverSelect";
-
 // import curiosityRover from "../images/curiosityRover.jpg";
 // import MarsWeather from "../../components/MarsWeather";
 
@@ -54,7 +52,7 @@ function Nasa() {
                                     alt="Mars Rover"
                                 /> */}
                                 <div
-                                    class=" h-20 md:h-64 bg-fixed md:my-20 "
+                                    class="h-10 md:h-64 bg-fixed md:my-10 "
                                     style={{
                                         backgroundImage: `url(${nasa_logo})`,
                                         backgroundPosition: "center",
@@ -78,8 +76,6 @@ function Nasa() {
                                 different cameras to display images from Mars
                             </p>
                         </div>
-
-                        <Select />
 
                         <TransitionInview>
                             <RoverPhotos />
