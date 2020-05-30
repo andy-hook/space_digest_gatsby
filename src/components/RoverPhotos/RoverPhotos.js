@@ -3,9 +3,9 @@ import useFetch from "../../hooks/useFetch";
 import Loader from "../base/Loader";
 import Moment from "react-moment";
 import chunkArray from "../../utils/chunkArray";
-import Pagination from "../base/Pagination";
-import Photos from "./Photos";
-import TransitionInview from "../TransitionInview";
+import Pagination from "../base/pagination";
+import Photos from "./photos";
+import TransitionInview from "../transitionInview";
 import Select from "./roverSelect";
 
 const PHOTOS_PER_PAGE = 15;
@@ -55,85 +55,6 @@ function RoverPhotos() {
 
     return (
         <>
-            {photoData ? (
-                <TransitionInview>
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 bg-secondary px-12 py-10 rounded-md mb-6 mt-12 text-center z-0">
-                        <div>
-                            <span className="block uppercase text-xs text-gray-700">
-                                Rover name:{" "}
-                            </span>
-                            <span className="block">
-                                {res.response.photos[0].rover.name}
-                            </span>
-                        </div>
-                        <div>
-                            <span className="block uppercase text-xs text-gray-700">
-                                Mars Sol:{" "}
-                            </span>
-                            <span className="block">
-                                {res.response.photos[0].sol}
-                            </span>
-                        </div>
-                        <div>
-                            <span className="block uppercase text-xs text-gray-700">
-                                Earth Date:{" "}
-                            </span>
-                            <span className="block">
-                                <Moment format="DD/MM/YYYY">
-                                    {res.response.photos[0].earth_date}
-                                </Moment>
-                            </span>
-                        </div>
-                        <div>
-                            <span className="block uppercase text-xs text-gray-700">
-                                Mars Sol:{" "}
-                            </span>
-                            <span className="block">
-                                {res.response.photos[0].sol}
-                            </span>
-                        </div>
-                        <div>
-                            <span className="block uppercase text-xs text-gray-700">
-                                Mars Sol:{" "}
-                            </span>
-                            <span className="block">
-                                {res.response.photos[0].sol}
-                            </span>
-                        </div>
-                        <div>
-                            <span className="block uppercase text-xs text-gray-700">
-                                Mars Sol:{" "}
-                            </span>
-                            <span className="block">
-                                {res.response.photos[0].sol}
-                            </span>
-                        </div>
-                        <div>
-                            <span className="block uppercase text-xs text-gray-700">
-                                Launch Date:{" "}
-                            </span>
-                            <span className="block">
-                                <Moment format="DD/MM/YY">
-                                    {res.response.photos[0].rover.launch_date}
-                                </Moment>
-                            </span>
-                        </div>
-                        <div>
-                            <span className="block uppercase text-xs text-gray-700">
-                                Status:{" "}
-                            </span>
-                            <span className="block">
-                                {res.response.photos[0].rover.status}
-                            </span>
-                        </div>
-                    </div>
-                </TransitionInview>
-            ) : (
-                <div className="container mx-auto pt-12 pb-32">
-                    <Loader className="mx-auto" />
-                </div>
-            )}
-
             <TransitionInview>
                 <div className="md:container mx-auto md:flex mt-16 md:mt-32 mb-12 md:mb-24 border-b-2 border-black text-left">
                     <h3 className="md:w-4/12 line-block flex-1 md:mb-8 md:mx-auto text-3xl">
@@ -173,6 +94,87 @@ function RoverPhotos() {
                             />
                         </div>
                     </div>
+                    {photoData ? (
+                        <TransitionInview>
+                            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 bg-secondary px-12 py-10 rounded-md mb-6 mt-12 text-center z-0">
+                                <div>
+                                    <span className="block uppercase text-xs text-gray-700">
+                                        Rover name:{" "}
+                                    </span>
+                                    <span className="block">
+                                        {res.response.photos[0].rover.name}
+                                    </span>
+                                </div>
+                                <div>
+                                    <span className="block uppercase text-xs text-gray-700">
+                                        Mars Sol:{" "}
+                                    </span>
+                                    <span className="block">
+                                        {res.response.photos[0].sol}
+                                    </span>
+                                </div>
+                                <div>
+                                    <span className="block uppercase text-xs text-gray-700">
+                                        Earth Date:{" "}
+                                    </span>
+                                    <span className="block">
+                                        <Moment format="DD/MM/YYYY">
+                                            {res.response.photos[0].earth_date}
+                                        </Moment>
+                                    </span>
+                                </div>
+                                <div>
+                                    <span className="block uppercase text-xs text-gray-700">
+                                        Mars Sol:{" "}
+                                    </span>
+                                    <span className="block">
+                                        {res.response.photos[0].sol}
+                                    </span>
+                                </div>
+                                <div>
+                                    <span className="block uppercase text-xs text-gray-700">
+                                        Mars Sol:{" "}
+                                    </span>
+                                    <span className="block">
+                                        {res.response.photos[0].sol}
+                                    </span>
+                                </div>
+                                <div>
+                                    <span className="block uppercase text-xs text-gray-700">
+                                        Mars Sol:{" "}
+                                    </span>
+                                    <span className="block">
+                                        {res.response.photos[0].sol}
+                                    </span>
+                                </div>
+                                <div>
+                                    <span className="block uppercase text-xs text-gray-700">
+                                        Launch Date:{" "}
+                                    </span>
+                                    <span className="block">
+                                        <Moment format="DD/MM/YY">
+                                            {
+                                                res.response.photos[0].rover
+                                                    .launch_date
+                                            }
+                                        </Moment>
+                                    </span>
+                                </div>
+                                <div>
+                                    <span className="block uppercase text-xs text-gray-700">
+                                        Status:{" "}
+                                    </span>
+                                    <span className="block">
+                                        {res.response.photos[0].rover.status}
+                                    </span>
+                                </div>
+                            </div>
+                        </TransitionInview>
+                    ) : (
+                        <div className="container mx-auto pt-12 pb-32">
+                            <Loader className="mx-auto" />
+                        </div>
+                    )}
 
                     {renderPhotoPage(currentPage - 1)}
                 </>
