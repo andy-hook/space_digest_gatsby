@@ -3,18 +3,23 @@ import useFetch from "../../hooks/useFetch";
 import Loader from "../base/Loader";
 import Moment from "react-moment";
 import chunkArray from "../../utils/chunkArray";
-import Pagination from "../base/Pagination";
-import Photos from "./Photos";
-import Button from "../base/Button";
+import Pagination from "../base/pagination";
+import Photos from "./photos";
+import RoverSelect from "./roverSelect";
 
 const PHOTOS_PER_PAGE = 15;
 const START_ON_PAGE_NUMBER = 1;
 
 function RoverPhotos() {
-    const randomSol = Math.floor(Math.random() * 2764);
+    const randomSol = (min, max) => {
+        return Math.floor(Math.random() * (max - min) + min);
+    };
 
     const res = useFetch(
-        `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=${randomSol}&camera=navcam&api_key=24TE7EgNfmXIvdb6vNNZGBWx8s54XbZzCCi2oAdN`,
+        `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=${randomSol(
+            1,
+            2764
+        )}&camera=navcam&api_key=24TE7EgNfmXIvdb6vNNZGBWx8s54XbZzCCi2oAdN`,
         {}
     );
 
@@ -36,34 +41,95 @@ function RoverPhotos() {
         }
     }, [res.response]);
 
-    console.log("Photos to display ->", photosToDisplay);
-
     function renderPhotoPage(pageIndex) {
         return <Photos items={photosToDisplay[pageIndex]} key={pageIndex} />;
     }
 
     const changePage = (pageNumber) => setCurrentPage(pageNumber);
 
-    function refreshPage() {
-        window.location.reload(false);
+    const photoData = JSON.parse(JSON.stringify(res.response));
+
+    console.log("photoData", photoData);
+
+    function capitalizeFirstLetter(string) {
+        return string.charAt(0).toUpperCase() + string.slice(1);
     }
 
     return (
         <>
             {photosToDisplay ? (
-                <div className="container">
-                    <div className="md:flex justify-between items-end mb-8 md:mb-14">
+                <div>
+                    <div className="md:flex justify-between items-end">
+                        <div className="flex-grow z-50">
+                            <RoverSelect />
+                        </div>
+                        <div className="flex-grow flex justify-end">
+                            <Pagination
+                                numberOfPages={photosToDisplay.length}
+                                onPageChange={changePage}
+                                activePageNumber={currentPage}
+                            />
+                        </div>
+                    </div>
+
+                    <div className="grid grid-cols-2 md:grid-cols-3 gap-4 bg-secondary px-12 py-10 rounded-md mb-6 mt-12 text-center z-0">
                         <div>
-                            <h2 className=" inline-block w-full">
-                                Photo from Mars
-                            </h2>
+                            <span className="block uppercase text-xs text-gray-700">
+                                Rover name:{" "}
+                            </span>
+                            <span className="block">
+                                {res.response.photos[0].rover.name}
+                            </span>
+                        </div>
+                        <div>
+                            <span className="block uppercase text-xs text-gray-700">
+                                Mars Sol:{" "}
+                            </span>
+                            <span className="block">
+                                {res.response.photos[0].sol}
+                            </span>
+                        </div>
+                        <div>
+                            <span className="block uppercase text-xs text-gray-700">
+                                Earth Date:{" "}
+                            </span>
+                            <span className="block">
+                                <Moment format="DD/MM/YYYY">
+                                    {res.response.photos[0].earth_date}
+                                </Moment>
+                            </span>
                         </div>
 
-                        <Pagination
-                            numberOfPages={photosToDisplay.length}
-                            onPageChange={changePage}
-                            activePageNumber={currentPage}
-                        />
+                        <div>
+                            <span className="block uppercase text-xs text-gray-700">
+                                Launch Date:{" "}
+                            </span>
+                            <span className="block">
+                                <Moment format="DD/MM/YY">
+                                    {res.response.photos[0].rover.launch_date}
+                                </Moment>
+                            </span>
+                        </div>
+                        <div>
+                            <span className="block uppercase text-xs text-gray-700">
+                                Landing Date:{" "}
+                            </span>
+                            <span className="block">
+                                <Moment format="DD/MM/YY">
+                                    {res.response.photos[0].rover.landing_date}
+                                </Moment>
+                            </span>
+                        </div>
+                        <div>
+                            <span className="block uppercase text-xs text-gray-700">
+                                Status:{" "}
+                            </span>
+                            <span className="block">
+                                {capitalizeFirstLetter(
+                                    res.response.photos[0].rover.status
+                                )}
+                            </span>
+                        </div>
                     </div>
 
                     {renderPhotoPage(currentPage - 1)}

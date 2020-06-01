@@ -1,45 +1,19 @@
 import React, { useState } from "react";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
-import RoverPhotos from "../components/RoverPhotos/RoverPhotos";
-// import MarsWeather from "../../components/MarsWeather";
-import FiftyFifty from "../components/base/FiftyFifty";
-import nasa_logo from "../images/nasa_logo.svg";
 import { useSpring, animated } from "react-spring";
-// import Select from "react-select";
-import makeAnimated from "react-select/animated";
+import RoverPhotos from "../components/roverPhotos/roverPhotos";
+import nasa_logo from "../images/nasa_logo.svg";
+import FiftyFifty from "../components/base/fiftyFifty";
+import TransitionPageIn from "../components/transitionPageIn";
+import TransitionInview from "../components/transitionInview";
 // import curiosityRover from "../images/curiosityRover.jpg";
-import TransitionPageIn from "../components/TransitionPageIn";
-import TransitionInview from "../components/TransitionInview";
+// import MarsWeather from "../../components/MarsWeather";
 
 function Nasa() {
     const fade = useSpring({ opacity: 1, from: { opacity: 0 } }); //Fade animation
     const [selectRover, setSelectRover] = useState("curiosity");
     const [selectCamera, setSelectCamera] = useState("NAVCAM");
-
-    function reactSelectCustomTheme(theme) {
-        return {
-            ...theme,
-            colors: {
-                ...theme.colors,
-                primary50: "#4AFFE8",
-                primary25: "#81e6d9",
-                primary: "#dbf4f1",
-            },
-        };
-    }
-
-    // Select option for react-select
-    const chooseRover = [
-        { value: "opportunity", label: "Opportunity" },
-        { value: "curiosity", label: "Curiosity" },
-        { value: "spirit", label: "Spirit" },
-    ];
-    const chooseCamera = [
-        { value: "FHAZ", label: "Front Hazard Avoidance Camera" },
-        { value: "NAVCAM", label: "Navigation Camera" },
-        { value: "RHAZ", label: "Rear Hazard Avoidance Camera" },
-    ];
 
     return (
         <Layout>
@@ -59,7 +33,7 @@ function Nasa() {
             <TransitionPageIn>
                 <div className="mx-auto pt-20 md:pt-24">
                     <div className="mb-12">
-                        <div className="w-9/12 mx-auto text-center">
+                        <div className="w-9/12 mx-auto text-center mb-16">
                             <h1 className="md:text-9xl text-5xl mb-5">NASA</h1>
                             <h3 className="md:w-7/12 mx-auto md:leading-tight mb-1">
                                 The National Aeronautics and Space
@@ -71,13 +45,8 @@ function Nasa() {
                         </div>
                         <TransitionInview>
                             <div className="w-full bg-primary mt-10 sm:mt-12 mb-0 md:mb-16 md:mb-20 py-2">
-                                {/* <img
-                                    className="w-7/12 mx-auto md:pl-20"
-                                    src={nasa_logo}
-                                    alt="Mars Rover"
-                                /> */}
                                 <div
-                                    class=" h-20 md:h-64 bg-fixed md:my-20 "
+                                    class="h-8 md:h-64 bg-fixed md:my-6"
                                     style={{
                                         backgroundImage: `url(${nasa_logo})`,
                                         backgroundPosition: "center",
@@ -89,16 +58,15 @@ function Nasa() {
                         </TransitionInview>
                     </div>
 
-                    <div className="container md:w-9/12 mx-auto mb-10 mt-0 md:mt-20">
+                    <div className="px-8 md:w-9/12 mx-auto mb-10 mt-0 md:mt-20">
                         {/* <MarsWeather /> */}
-
                         <TransitionInview>
-                            <div className="container mx-auto text-left md:flex mt-32 mb-24 border-b-2 border-black ">
-                                <h2 className="md:w-4/12 line-block flex-1 mb-8 mx-auto">
+                            <div className="md:container mx-auto md:flex mt-16 md:mt-32 mb-12 md:mb-24 border-b-2 border-black text-left">
+                                <h3 className="md:w-4/12 line-block flex-1 md:mb-8 md:mx-auto text-3xl">
                                     Mars rovers
-                                </h2>
+                                </h3>
 
-                                <p className="md:w-7/12 mb-12 mx-auto">
+                                <p className="md:w-7/12 mb-20 mx-auto">
                                     Spirit and Opportunity landed on Mars
                                     January 3 and January 24, 2004 PST (Jan. 4
                                     and Jan. 25 UTC). Both rovers lived well
@@ -109,7 +77,17 @@ function Nasa() {
                                 </p>
                             </div>
                         </TransitionInview>
-
+                        <TransitionInview>
+                            <div className="px-8 md:w-7/12 mx-auto text-center mb-16 md:mb-20">
+                                <h2 className="mb-6 font-bold">
+                                    Mars Rover Images
+                                </h2>
+                                <p className="mb-10">
+                                    Select your favourite Mars Rover and cameras
+                                    to display images from Mars
+                                </p>
+                            </div>
+                        </TransitionInview>
                         <TransitionInview>
                             <RoverPhotos />
                         </TransitionInview>
