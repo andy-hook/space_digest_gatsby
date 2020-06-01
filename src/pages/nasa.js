@@ -46,7 +46,7 @@ function Nasa() {
                         <TransitionInview>
                             <div className="w-full bg-primary mt-10 sm:mt-12 mb-0 md:mb-16 md:mb-20 py-2">
                                 <div
-                                    class="h-8 md:h-64 bg-fixed md:my-6"
+                                    className="h-8 md:h-64 bg-fixed md:my-6"
                                     style={{
                                         backgroundImage: `url(${nasa_logo})`,
                                         backgroundPosition: "center",

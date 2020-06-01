@@ -49,7 +49,7 @@ function RoverPhotos() {
 
     const photoData = JSON.parse(JSON.stringify(res.response));
 
-    console.log("photoData", photoData);
+    // console.log("photoData", photoData);
 
     function capitalizeFirstLetter(string) {
         return string.charAt(0).toUpperCase() + string.slice(1);
@@ -74,26 +74,26 @@ function RoverPhotos() {
 
                     <div className="grid grid-cols-2 md:grid-cols-3 gap-4 bg-secondary px-12 py-10 rounded-md mb-6 mt-12 text-center z-0">
                         <div>
-                            <span className="block uppercase text-xs text-gray-700">
+                            <span className="block uppercase text-sm text-gray-700">
                                 Rover name:{" "}
                             </span>
-                            <span className="block">
+                            <span className="block text-xl">
                                 {res.response.photos[0].rover.name}
                             </span>
                         </div>
                         <div>
-                            <span className="block uppercase text-xs text-gray-700">
+                            <span className="block uppercase text-sm text-gray-700">
                                 Mars Sol:{" "}
                             </span>
-                            <span className="block">
+                            <span className="block text-xl">
                                 {res.response.photos[0].sol}
                             </span>
                         </div>
                         <div>
-                            <span className="block uppercase text-xs text-gray-700">
+                            <span className="block uppercase text-sm text-gray-700">
                                 Earth Date:{" "}
                             </span>
-                            <span className="block">
+                            <span className="block text-xl">
                                 <Moment format="DD/MM/YYYY">
                                     {res.response.photos[0].earth_date}
                                 </Moment>
@@ -101,30 +101,30 @@ function RoverPhotos() {
                         </div>
 
                         <div>
-                            <span className="block uppercase text-xs text-gray-700">
+                            <span className="block uppercase text-sm text-gray-700">
                                 Launch Date:{" "}
                             </span>
-                            <span className="block">
+                            <span className="block text-xl">
                                 <Moment format="DD/MM/YY">
                                     {res.response.photos[0].rover.launch_date}
                                 </Moment>
                             </span>
                         </div>
                         <div>
-                            <span className="block uppercase text-xs text-gray-700">
+                            <span className="block uppercase text-sm text-gray-700">
                                 Landing Date:{" "}
                             </span>
-                            <span className="block">
+                            <span className="block text-xl">
                                 <Moment format="DD/MM/YY">
                                     {res.response.photos[0].rover.landing_date}
                                 </Moment>
                             </span>
                         </div>
                         <div>
-                            <span className="block uppercase text-xs text-gray-700">
+                            <span className="block uppercase text-sm text-gray-700">
                                 Status:{" "}
                             </span>
-                            <span className="block">
+                            <span className="block text-xl">
                                 {capitalizeFirstLetter(
                                     res.response.photos[0].rover.status
                                 )}
@@ -136,7 +136,7 @@ function RoverPhotos() {
                 </div>
             ) : (
                 <div className="container mx-auto h-screen text-center">
-                    <Loader className="inline-block" />
+                    <Loader className="inline-block text-xl" />
                 </div>
             )}
         </>
