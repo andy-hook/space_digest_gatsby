@@ -178,7 +178,7 @@ function Launch(props) {
                                                     Article
                                                 </a>
                                                 <a
-                                                    className="a inline-block"
+                                                    className="a inline-block text-xl"
                                                     href={
                                                         pageData[0].links
                                                             .wikipedia
